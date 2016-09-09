@@ -2,7 +2,7 @@ Naturesoft::HoangkhangstoreCom::Engine.routes.draw do
   root to: "home#index"
 end
 Naturesoft::Products::Engine.routes.draw do
-    get "chuyen-muc-san-pham.html" => "categories#list", as: :list_categories
+    get "chuyen-muc-san-pham/:id.html" => "categories#list", as: :list_categories
     get "chuyen-muc-san-pham/chi-tiet.html" => "products#detail", as: :detail_products
 end
 Naturesoft::Contacts::Engine.routes.draw do
