@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag "/frontend/assets/lib/bootstrap/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/lib/font-awesome/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/lib/select2/css/select2.min.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/lib/jquery.bxslider/jquery.bxslider.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/lib/owl.carousel/owl.carousel.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/lib/fancyBox/jquery.fancybox.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/lib/jquery-ui/jquery-ui.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/css/animate.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/css/reset.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/css/style.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/css/responsive.css" %>
+    
+    <title>Trang Chủ - HoangKhang Store</title>
+</head>
+
+<body class="<%= @body_class %>" class="category-page">
+  
+<!-- TOP BANNER -->
+<!--<div id="top-banner" class="top-banner">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <h1>Special Offer!</h1>
+        <h2>Additional 40% OFF For Men & Women Clothings</h2>
+        <span>This offer is for online only 7PM to middnight ends in 30th July 2015</span>
+        <span class="btn-close"></span>
+    </div>
+</div>-->
+
+<!-- HEADER -->
+<%= render "/modules/header" %>
+<!-- end header -->
+
+<%= yield %>
+
+<!-- Footer -->
+<%= render "/modules/footer" %>
+
+<a href="#" class="scroll_top" title="Scroll to Top" style="display: inline;">Scroll</a>
+<!-- Script-->
+<%= render "/modules/js_files" %>
+
+</body>
+</html>
