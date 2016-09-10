@@ -2,43 +2,32 @@
     <div class="top-header">
         <div class="container">
             <div class="nav-top-links">
-                <a class="first-item" href="#"><img alt="phone" src="/frontend/assets/images/phone.png" />00-62-658-658</a>
-                <a href="#"><img alt="email" src="/frontend/assets/images/email.png" />Contact us today!</a>
-            </div>
-            <div class="currency ">
-                <div class="dropdown">
-                      <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">USD</a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Dollar</a></li>
-                        <li><a href="#">Euro</a></li>
-                      </ul>
-                </div>
+                <a class="first-item" href="#"><img alt="phone" src="/frontend/assets/images/phone.png" />(08) 3984 7690</a>
+                <a><img alt="fax" src="/frontend/assets/images/fax.png" />(08) 3984 7691</a>
+                <a href="mailto:kinhdoanh@hoangkhang.com.vn"><img alt="email" src="/frontend/assets/images/email.png" />kinhdoanh@hoangkhang.com.vn</a>
             </div>
             <div class="language ">
                 <div class="dropdown">
-                      <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-                      <img alt="email" src="/frontend/assets/images/fr.jpg" />French
-                      
-                      </a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><img alt="email" src="/frontend/assets/images/en.jpg" />English</a></li>
-                        <li><a href="#"><img alt="email" src="/frontend/assets/images/fr.jpg" />French</a></li>
-                    </ul>
+                    <a href=""><img alt="email" src="/frontend/assets/images/vn.png" />Tiếng Việt</a>
                 </div>
             </div>
             
             <div class="support-link">
-                <a href="#">Services</a>
-                <a href="#">Support</a>
+                <a href="">Đăng nhập</a>
+                <a href="">Kiểm tra đơn hàng</a>
             </div>
 
             <div id="user-info-top" class="user-info pull-right">
                 <div class="dropdown">
-                    <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>My Account</span></a>
+                    <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>Hướng dẩn</span></a>
                     <ul class="dropdown-menu mega_dropdown" role="menu">
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="#">Compare</a></li>
-                        <li><a href="#">Wishlists</a></li>
+                        <li><a href="">Các câu hỏi thường gặp</a></li>
+                        <li><a href="">Hướng dẩn mua hàng</a></li>
+                        <li><a href="">Mua sắm thông minh</a></li>
+                        <li><a href="">Mua hàng đảm bảo</a></li>
+                        <li><a href="">Cách thức thanh toán</a></li>
+                        <li><a href="">Giao hàng toàn quốc</a></li>
+                        <li><a href="">Về chúng tôi</a></li>
                     </ul>
                 </div>
             </div>
@@ -55,62 +44,52 @@
                 <form class="form-inline">
                       <div class="form-group form-category">
                         <select class="select-category">
-                            <option value="2">All Categories</option>
-                            <option value="1">Men</option>
-                            <option value="2">Women</option>
+                            <option value="">Tất cả danh mục</option>
+                            <option value="">Thiết bị tin học</option>
+                            <option value="">Thiết bị văn phòng</option>
+                            <option value="">Thiết bị hệ thống mạng</option>
+                            <option value="">Thiết bị viễn thông</option>
+                            <option value="">An ninh kiểm soát</option>
                         </select>
                       </div>
                       <div class="form-group input-serach">
-                        <input type="text"  placeholder="Keyword here...">
+                        <input type="text"  placeholder="Nhập từ khóa tìm kiếm">
                       </div>
                       <button type="submit" class="pull-right btn-search"></button>
                 </form>
             </div>
             <div id="cart-block" class="col-xs-5 col-sm-2 shopping-cart-box">
-                <a class="cart-link" href="order.html">
-                    <span class="title">Shopping cart</span>
-                    <span class="total">2 items - 122.38 €</span>
+                <a class="cart-link" href="">
+                    <span class="title">Giỏ hàng</span>
+                    <span class="total">500,000 VNĐ</span>
                     <span class="notify notify-left">2</span>
                 </a>
                 <div class="cart-block">
                     <div class="cart-block-content">
-                        <h5 class="cart-title">2 Items in my cart</h5>
+                        <h5 class="cart-title">2 sản phẩm trong giỏ hàng</h5>
                         <div class="cart-block-list">
                             <ul>
+                                <% (0..1).each do |item| %>
                                 <li class="product-info">
                                     <div class="p-left">
-                                        <a href="#" class="remove_link"></a>
-                                        <a href="#">
-                                        <img class="img-responsive" src="/frontend/assets/data/product-100x122.jpg" alt="p10">
-                                        </a>
+                                        <%= link_to "", "#", class: "remove_link" %>
+                                        <%= link_to image_tag("/frontend/assets/data/product-100x122.jpg", alt: "", class: "img-responsive"), "#" %>
                                     </div>
                                     <div class="p-right">
-                                        <p class="p-name">Donec Ac Tempus</p>
-                                        <p class="p-rice">61,19 €</p>
-                                        <p>Qty: 1</p>
+                                        <p class="p-name">Điện thoại Motorola V3I</p>
+                                        <p class="p-rice">250,000 VNĐ</p>
+                                        <p>Số lượng: 1</p>
                                     </div>
                                 </li>
-                                <li class="product-info">
-                                    <div class="p-left">
-                                        <a href="#" class="remove_link"></a>
-                                        <a href="#">
-                                        <img class="img-responsive" src="/frontend/assets/data/product-s5-100x122.jpg" alt="p10">
-                                        </a>
-                                    </div>
-                                    <div class="p-right">
-                                        <p class="p-name">Donec Ac Tempus</p>
-                                        <p class="p-rice">61,19 €</p>
-                                        <p>Qty: 1</p>
-                                    </div>
-                                </li>
+                                <% end %>
                             </ul>
                         </div>
                         <div class="toal-cart">
-                            <span>Total</span>
-                            <span class="toal-price pull-right">122.38 €</span>
+                            <span>Tổng tiền: </span>
+                            <span class="toal-price pull-right">500,000 VNĐ</span>
                         </div>
                         <div class="cart-buttons">
-                            <a href="order.html" class="btn-check-out">Checkout</a>
+                            <a href="#" class="btn-check-out">Đặt hàng</a>
                         </div>
                     </div>
                 </div>
