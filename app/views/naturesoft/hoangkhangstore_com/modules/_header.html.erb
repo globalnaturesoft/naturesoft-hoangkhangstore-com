@@ -2,7 +2,7 @@
     <div class="top-header">
         <div class="container">
             <div class="nav-top-links">
-                <a class="first-item" href="#"><img alt="phone" src="/frontend/assets/images/phone.png" />00-62-658-658</a>
+                <a class="first-item" href="#"><i class="icon-phone"></i> 00-62-658-658</a>
                 <a href="#"><img alt="email" src="/frontend/assets/images/email.png" />Contact us today!</a>
             </div>
             <div class="currency ">
@@ -48,10 +48,10 @@
     <!-- MAIN HEADER -->
     <div class="container main-header">
         <div class="row">
-            <div class="col-xs-12 col-sm-3 logo">
-                <%= link_to image_tag("/frontend/assets/images/logo.png", alt: "HoangKhang Store"), naturesoft_hoangkhangstore_com.root_path %>
+            <div class="col-xs-12 col-sm-12 col-md-3 logo">
+                <a href="index.html"><img alt="Kute Shop" src="/frontend/assets/data/option6/logo.png" /></a>
             </div>
-            <div class="col-xs-7 col-sm-7 header-search-box">
+            <div class="col-xs-7 col-sm-8 col-md-7 header-search-box">
                 <form class="form-inline">
                       <div class="form-group form-category">
                         <select class="select-category">
@@ -65,18 +65,26 @@
                       </div>
                       <button type="submit" class="pull-right btn-search"></button>
                 </form>
+                <div class="keyword">
+                    <p class="lebal">Keywords:</p>
+                    <p>
+                        <a href="#">T-shirt, </a>
+                        <a href="#">Leggings, </a>
+                        <a href="#">Cotton, ...</a>
+                    </p>
+                </div>
             </div>
-            <div id="cart-block" class="col-xs-5 col-sm-2 shopping-cart-box">
-                <a class="cart-link" href="order.html">
-                    <span class="title">Shopping cart</span>
-                    <span class="total">2 items - 122.38 €</span>
-                    <span class="notify notify-left">2</span>
-                </a>
-                <div class="cart-block">
-                    <div class="cart-block-content">
-                        <h5 class="cart-title">2 Items in my cart</h5>
-                        <div class="cart-block-list">
-                            <ul>
+            <div class="col-xs-5 col-sm-3 col-md-2 group-button-header">
+                <a title="Compare" href="#" class="btn-compare">compare</a>
+                <a title="My wishlist" href="#" class="btn-heart">wishlist</a>
+                <div class="btn-cart" id="cart-block">
+                    <a title="My cart" href="cart.html">Cart</a>
+                    <span class="notify notify-right">2</span>
+                    <div class="cart-block">
+                        <div class="cart-block-content">
+                            <h5 class="cart-title">2 Items in my cart</h5>
+                            <div class="cart-block-list">
+                                <ul>
                                 <li class="product-info">
                                     <div class="p-left">
                                         <a href="#" class="remove_link"></a>
@@ -104,19 +112,20 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="toal-cart">
-                            <span>Total</span>
-                            <span class="toal-price pull-right">122.38 €</span>
-                        </div>
-                        <div class="cart-buttons">
-                            <a href="order.html" class="btn-check-out">Checkout</a>
+                            </div>
+                            <div class="toal-cart">
+                                <span>Total</span>
+                                <span class="toal-price pull-right">122.38 €</span>
+                            </div>
+                            <div class="cart-buttons">
+                                <a href="order.html" class="btn-check-out">Checkout</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-        
     </div>
     <!-- END MANIN HEADER -->
     <div id="nav-top-menu" class="nav-top-menu">
