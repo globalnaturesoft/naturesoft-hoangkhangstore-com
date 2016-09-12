@@ -5,9 +5,9 @@
     width: 170px;
 }
 .product-list.list .add-to-cart a {
-    width: 158px;
+    width: 156px;
 }
-.option6 .product-list li .quick-view {
+.product-list.list .quick-view {
     right: 28px;
 #main-menu .navbar .navbar-nav>li:hover, #main-menu .navbar .navbar-nav>li.active {
     background: #006a94;

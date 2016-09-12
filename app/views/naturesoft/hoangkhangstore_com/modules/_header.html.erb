@@ -2,9 +2,9 @@
     <div class="top-header">
         <div class="container">
             <div class="nav-top-links">
-                <a class="first-item" href="#"><i class="icon-phone"></i> (08) 3984 7690</a>                
+                <a class="first-item" href="tel:(08) 3984 7690"><i class="icon-phone"></i> (08) 3984 7690</a>                
                 <a href="mailto:kinhdoanh@hoangkhang.com.vn">
-                    <i class="icon-envelop"></i> kinhdoanh@hoangkhang.com.vn
+                    <i class="icon-envelop"></i>kinhdoanh@hoangkhang.com.vn
                 </a>
             </div>
             
@@ -40,62 +40,51 @@
                 <form class="form-inline">
                       <div class="form-group form-category">
                         <select class="select-category">
-                            <option value="2">All Categories</option>
-                            <option value="1">Men</option>
-                            <option value="2">Women</option>
+                            <option value="">Tất cả danh mục</option>
+                            <option value="">Máy tính xách tay (Laptop)</option>
+                            <option value="">Máy tính để bàn (PC)</option>
                         </select>
                       </div>
                       <div class="form-group input-serach">
-                        <input type="text"  placeholder="Keyword here...">
+                        <input type="text" name="keyword" placeholder="Bạn muốn tìm gì?">
                       </div>
                       <button type="submit" class="pull-right btn-search"></button>
                 </form>
             </div>
             <div id="cart-block" class="col-xs-5 col-sm-2 shopping-cart-box">
-                <a class="cart-link" href="order.html">
-                    <span class="title">Shopping cart</span>
-                    <span class="total">2 items - 122.38 €</span>
+                <a class="cart-link" href="">
+                    <span class="title">Giỏ hàng</span>
+                    <span class="total">50,000,000 VNĐ</span>
                     <span class="notify notify-left">2</span>
                 </a>
                 <div class="cart-block">
                     <div class="cart-block-content">
-                        <h5 class="cart-title">2 Items in my cart</h5>
+                        <h5 class="cart-title">2 sản phẩm trong giỏ hàng</h5>
                         <div class="cart-block-list">
                             <ul>
+                                <% (0..1).each do |item| %>
                                 <li class="product-info">
                                     <div class="p-left">
                                         <a href="#" class="remove_link"></a>
                                         <a href="#">
-                                        <img class="img-responsive" src="assets/data/product-100x122.jpg" alt="p10">
+                                        <img class="img-responsive" src="/frontend/assets/data/product-100x122.jpg" alt="p10">
                                         </a>
                                     </div>
                                     <div class="p-right">
-                                        <p class="p-name">Donec Ac Tempus</p>
-                                        <p class="p-rice">61,19 €</p>
+                                        <p class="p-name">Tên sản phẩm</p>
+                                        <p class="p-rice">25,000,000 VNĐ</p>
                                         <p>Qty: 1</p>
                                     </div>
                                 </li>
-                                <li class="product-info">
-                                    <div class="p-left">
-                                        <a href="#" class="remove_link"></a>
-                                        <a href="#">
-                                        <img class="img-responsive" src="assets/data/product-s5-100x122.jpg" alt="p10">
-                                        </a>
-                                    </div>
-                                    <div class="p-right">
-                                        <p class="p-name">Donec Ac Tempus</p>
-                                        <p class="p-rice">61,19 €</p>
-                                        <p>Qty: 1</p>
-                                    </div>
-                                </li>
+                                <% end %>
                             </ul>
                         </div>
                         <div class="toal-cart">
-                            <span>Total</span>
-                            <span class="toal-price pull-right">122.38 €</span>
+                            <span>Tổng tiền</span>
+                            <span class="toal-price pull-right">50,000,000 VNĐ</span>
                         </div>
                         <div class="cart-buttons">
-                            <a href="order.html" class="btn-check-out">Checkout</a>
+                            <%= link_to "Đặt hàng", "", class: "btn-check-out" %>
                         </div>
                     </div>
                 </div>
