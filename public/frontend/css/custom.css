@@ -1,3 +1,12 @@
 #address-list .tit-name {
     width: 30px;
 }
+.product-list.list .add-to-cart {
+    width: 170px;
+}
+.product-list.list .add-to-cart a {
+    width: 158px;
+}
+.option6 .product-list li .quick-view {
+    right: 28px;
+}

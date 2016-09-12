@@ -69,22 +69,22 @@
                     </ul>
                     <!-- PRODUCT LIST -->
                     <ul class="row product-list grid">
-                        <% (0..17).each do |item| %>
+                        <% @products.each do |item| %>
                         <li class="col-sx-12 col-sm-4">
                             <div class="product-container">
                                 <div class="left-block">
-                                    <%= link_to image_tag("/frontend/assets/data/p40.jpg", alt: "Product name", class: "img-responsive"), naturesoft_products.detail_products_path %>
+                                    <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name, class: "img-responsive"), naturesoft_products.detail_products_path %>
                                     <div class="quick-view">
                                             <a title="Add to my wishlist" class="heart" href="#"></a>
                                             <a title="Add to compare" class="compare" href="#"></a>
                                             <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#add">Add to Cart</a>
+                                        <a title="Add to Cart" href="#add">Thêm vào giỏ hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
-                                    <h5 class="product-name"><%= link_to "Maecenas consequat mauris", naturesoft_products.detail_products_path %></h5>
+                                    <h5 class="product-name"><%= link_to item.name, naturesoft_products.detail_products_path %></h5>
                                     <div class="product-star">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -93,14 +93,16 @@
                                         <i class="fa fa-star-half-o"></i>
                                     </div>
                                     <div class="content_price">
-                                        <span class="price product-price">$38,95</span>
-                                        <span class="price old-price">$52,00</span>
+                                        <span class="price product-price"><%= format_number(item.new_price) %> VNĐ</span>
+                                        <% if !item.discount.nil? && !item.old_price.nil? %>
+                                        <span class="price old-price"><%= format_number(item.old_price) %> VNĐ</span>
+                                        <% end %>
                                     </div>
                                     <div class="info-orther">
-                                        <p>Item Code: #453217907</p>
-                                        <p class="availability">Availability: <span>In stock</span></p>
+                                        <p>Mã sản phẩm: <%= item.code %></p>
+                                        <p class="availability">Trạng thái: <span>Còn trong kho</span></p>
                                         <div class="product-desc">
-                                            Vestibulum eu odio. Suspendisse potenti. Morbi mollis tellus ac sapien. Praesent egestas tristique nibh. Nullam dictum felis eu pede mollis pretium. Fusce egestas elit eget lorem. In auctor lobortis lacus. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor.
+                                            <%= item.short_description %>
                                         </div>
                                     </div>
                                 </div>
