@@ -1,0 +1,10 @@
+<div class="header-banner banner-opacity">
+    <a href="<%= banner.link_url %>">
+        <% if banner.image_url.present? %>
+            <!--image-size:234x450-->
+            <%= image_tag(image_src(banner.image_url.thumb)) %>
+        <% else %>
+            <img alt="Banner Default" src="/frontend/assets/data/ads1.jpg" />
+        <% end %>
+    </a>
+</div>
