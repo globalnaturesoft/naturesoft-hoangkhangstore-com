@@ -611,7 +611,7 @@
 	.option6 #main-menu .navbar-collapse{
 		margin-left: 0;
 	}
-	.option6 .main-header .header-search-box .keyword{
+	.option6 .main-header .header-search-box .keyword {
 		display: none;
 	}
 	.option6 .main-header .header-search-box .form-inline{
@@ -627,6 +627,42 @@
 
 }
 
+
+.option6 .nav-top-menu.nav-ontop{
+	background: #007176;
+	height: 51px;
+}
+.option6 .nav-top-menu.nav-ontop .navbar-right{
+	display: none;
+}
+.option6 .nav-ontop #box-vertical-megamenus .title{
+	background: #000;
+	color: #fff;
+	border-left: none;
+	text-align: center;
+	height: 51px;
+
+}
+.option6 #form-search-opntop .btn-search:before{
+	color: #fff;
+}
+.option6 #form-search-opntop form .input-serach input{
+	color: #fff;
+}
+.option6 #form-search-opntop form .input-serach input::-webkit-input-placeholder { color:#fff; }
+.option6 #form-search-opntop form .input-serach input::-webkit-input-placeholder { color:#fff;  }
+.option6 #form-search-opntop form .input-serach input::-webkit-input-placeholder { color:#fff; }
+
+.option6 #form-search-opntop:hover form{
+  border: 1px solid #dfdfdf;
+  background: #007176;
+}
+.option6 #user-info-opntop a.current-open:before {
+  color: #fff;
+}
+.option6 #shopping-cart-box-ontop .fa{
+	color: #fff;
+}
 
 
 
