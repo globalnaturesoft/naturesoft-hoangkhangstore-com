@@ -3,5 +3,6 @@ Naturesoft::Nsmodule.class_eval do
     "box-vertical-megamenus" => nil,
     "address-box" => nil,
     "homeslider" => nil,
+    "header-banner" => nil,
   }
 end
