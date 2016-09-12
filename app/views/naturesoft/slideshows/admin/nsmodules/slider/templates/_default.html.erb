@@ -1,0 +1,9 @@
+<div class="homeslider">
+    <div class="content-slide">
+        <ul id="contenhomeslider">
+            <% slideshow.slides.order(custom_order: "asc").each do |item| %>  
+                <li><%= image_tag(item.image.thumb, {alt: "Slider: 666x450"}) %></li>
+            <% end %>
+        </ul>
+    </div>
+</div>
