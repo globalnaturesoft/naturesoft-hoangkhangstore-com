@@ -9,4 +9,21 @@
 }
 .option6 .product-list li .quick-view {
     right: 28px;
+#main-menu .navbar .navbar-nav>li:hover, #main-menu .navbar .navbar-nav>li.active {
+    background: #006a94;
+}
+.header-top-right {
+    border-top-color: #006a94;
+}
+.main-header .header-search-box .form-inline .btn-search,
+.main-header .shopping-cart-box a.cart-link:after,
+#mail-box .btn {
+    background-color: #ee8f1b;
+}
+.popular-tabs .nav-tab li:hover, .popular-tabs .nav-tab li.active,
+#main-menu .dropdown-menu .block-container .group_header>a {
+    border-bottom-color: #ee8f1b;
+}
+a:hover {
+    color: #006a94;
 }
