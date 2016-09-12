@@ -14,7 +14,7 @@
                         <div class="vertical-groups col-sm-12">
                             <% item.children.order("custom_order").each do |child_1| %>
                             <div class="mega-group col-sm-4">
-                                <h4 class="mega-group-header"><span><%= child_1.name %></span></h4>
+                                <h4 class="mega-group-header"><span><%= link_to child_1.name, child_1.url %></span></h4>
                                 <ul class="group-link-default">
                                     <% child_1.children.order("custom_order").each do |child_2| %>
                                     <li><%= link_to child_2.name, child_2.url %></li>
