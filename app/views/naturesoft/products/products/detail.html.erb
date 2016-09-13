@@ -19,7 +19,7 @@
             <div class="column col-xs-12 col-sm-3" id="left_column">
                 <!-- block best sellers -->
                 <div class="block left-module">
-                    <p class="title_block">NEW PRODUCTS</p>
+                    <p class="title_block">SẢN PHẨM MỚI</p>
                     <div class="block_content">
                         <ul class="products-block best-sell">
                                 <li>
@@ -259,47 +259,49 @@
                                 <!-- product-imge-->
                                 <div class="product-image">
                                     <div class="product-full">
-                                        <img id="product-zoom" src='/frontend/assets/data/product-s3-420x512.jpg' data-zoom-image="/frontend/assets/data/product-s3-850x1036.jpg"/>
+                                        <img id="product-zoom" src='<%= @product.images.first.image_url.big %>' data-zoom-image="<%= @product.images.first.image_url.big %>"/>
                                     </div>
                                     <div class="product-img-thumb" id="gallery_01">
                                         <ul class="owl-carousel" data-items="3" data-nav="true" data-dots="false" data-margin="20" data-loop="false">
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s3-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s3-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s3-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s2-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s2-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s2-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-420x512.jpg" data-zoom-image="/frontend/assets/data/product-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s4-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s4-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s4-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s5-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s5-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s5-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s6-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s6-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s6-100x122.jpg" /> 
-                                                </a>
-                                            </li>
+                                            <% @product.images.each do |item| %>
+                                                <li>
+                                                    <a href="#" data-image="<%= item.image_url.big %>" data-zoom-image="<%= item.image_url.big %>">
+                                                        <img id="product-zoom"  src="<%= item.image_url.big %>" /> 
+                                                    </a>
+                                                </li>
+                                            <% end %>
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-s2-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s2-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-s2-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-420x512.jpg" data-zoom-image="/frontend/assets/data/product-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-s4-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s4-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-s4-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-s5-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s5-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-s5-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-s6-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s6-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-s6-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
                                         </ul>
                                     </div>
                                 </div>
                                 <!-- product-imge-->
                             </div>
                             <div class="pb-right-column col-xs-12 col-sm-6">
-                                <h1 class="product-name">Maecenas consequat mauris</h1>
+                                <h1 class="product-name"><%= @product.name %></h1>
                                 <div class="product-comments">
                                     <div class="product-star">
                                         <i class="fa fa-star"></i>
@@ -314,22 +316,22 @@
                                     </div>
                                 </div>
                                 <div class="product-price-group">
-                                    <span class="price">$38.95</span>
-                                    <span class="old-price">$52.00</span>
+                                    <span class="price"><%= number_with_delimiter(@product.new_price.to_i, delimiter: ".") %> đ</span>
+                                    <span class="old-price"><%= number_with_delimiter(@product.old_price.to_i, delimiter: ".") if !@product.old_price.nil? %> đ</span>
                                     <span class="discount">-30%</span>
                                 </div>
                                 <div class="info-orther">
-                                    <p>Item Code: #453217907</p>
-                                    <p>Availability: <span class="in-stock">In stock</span></p>
-                                    <p>Condition: New</p>
+                                    <p>Mã sản phẩm: <%= @product.code %></p>
+                                    <p>Trạng thái: <span class="in-stock">Còn hàng</span></p>
+                                    <p>Tình trạng hàng hóa: Mới</p>
                                 </div>
                                 <div class="product-desc">
-                                    Vestibulum eu odio. Suspendisse potenti. Morbi mollis tellus ac sapien. Praesent egestas tristique nibh. Nullam dictum felis eu pede mollis pretium.Fusce egestas elit eget lorem. 
+                                    <%= @product.short_description if !@product.short_description.nil? %>
                                 </div>
                                 <div class="form-option">
-                                    <p class="form-option-title">Available Options:</p>
+                                    <p class="form-option-title">Tùy chọn có sẵn:</p>
                                     <div class="attributes">
-                                        <div class="attribute-label">Color:</div>
+                                        <div class="attribute-label">Màu sắc:</div>
                                         <div class="attribute-list">
                                             <ul class="list-color">
                                                 <li style="background:#0c3b90;"><a href="#">red</a></li>
@@ -342,7 +344,7 @@
                                         </div>
                                     </div>
                                     <div class="attributes">
-                                        <div class="attribute-label">Qty:</div>
+                                        <div class="attribute-label">Số lượng:</div>
                                         <div class="attribute-list product-qty">
                                             <div class="qty">
                                                 <input id="option-product-qty" type="text" value="1">
@@ -372,14 +374,14 @@
                                 </div>
                                 <div class="form-action">
                                     <div class="button-group">
-                                        <a class="btn-add-cart" href="#">Add to cart</a>
+                                        <a class="btn-add-cart" href="#">Thêm vào giỏ hàng</a>
                                     </div>
                                     <div class="button-group">
                                         <a class="wishlist" href="#"><i class="fa fa-heart-o"></i>
-                                        <br>Wishlist</a>
+                                        <br>Yêu thích</a>
                                         <a class="compare" href="#"><i class="fa fa-signal"></i>
                                         <br>        
-                                        Compare</a>
+                                        So sánh</a>
                                     </div>
                                 </div>
                                 <div class="form-share">
@@ -396,13 +398,13 @@
                         <div class="product-tab">
                             <ul class="nav-tab">
                                 <li class="active">
-                                    <a aria-expanded="false" data-toggle="tab" href="#product-detail">Product Details</a>
+                                    <a aria-expanded="false" data-toggle="tab" href="#product-detail">Mô tả chi tiết</a>
                                 </li>
                                 <li>
-                                    <a aria-expanded="true" data-toggle="tab" href="#information">information</a>
+                                    <a aria-expanded="true" data-toggle="tab" href="#information">Thông số kỹ thuật</a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#reviews">reviews</a>
+                                    <a data-toggle="tab" href="#reviews">Đánh giá</a>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#extra-tabs">Extra Tabs</a>
@@ -413,11 +415,7 @@
                             </ul>
                             <div class="tab-container">
                                 <div id="product-detail" class="tab-panel active">
-                                    <p>Morbi mollis tellus ac sapien. Nunc nec neque. Praesent nec nisl a purus blandit viverra. Nunc nec neque. Pellentesque auctor neque nec urna.</p>
-
-                                    <p>Curabitur suscipit suscipit tellus. Cras id dui. Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas vestibulum mollis diam.</p>
-
-                                    <p>Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Sed lectus. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Nam at tortor in tellus interdum sagittis. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est.</p>
+                                    <%= @product.description.html_safe if !@product.description.nil? %>
                                 </div>
                                 <div id="information" class="tab-panel">
                                     <table class="table table-bordered">
@@ -505,7 +503,7 @@
                         <!-- ./tab product -->
                         <!-- box product -->
                         <div class="page-product-box">
-                            <h3 class="heading">Related Products</h3>
+                            <h3 class="heading">Sản Phẩm Liên Quan</h3>
                             <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
                                 <li>
                                     <div class="product-container">
@@ -636,7 +634,7 @@
                         <!-- ./box product -->
                         <!-- box product -->
                         <div class="page-product-box">
-                            <h3 class="heading">You might also like</h3>
+                            <h3 class="heading">Có Thể Bạn Thích</h3>
                             <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
                                 <li>
                                     <div class="product-container">
