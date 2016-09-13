@@ -1,0 +1,7 @@
+<div class="category-slider">
+    <ul class="owl-carousel owl-style2" data-dots="false" data-loop="true" data-nav = "true" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1">
+        <% slideshow.slides.order(custom_order: "asc").where(status: "active").each do |item| %>  
+            <li><%= image_tag(item.image.thumb, {alt: "870x288"}) %></li>
+        <% end %>
+    </ul>
+</div>
