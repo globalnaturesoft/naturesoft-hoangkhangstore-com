@@ -28,3 +28,6 @@
 a:hover {
     color: #006a94;
 }
+#product .pb-right-column .form-option .attributes .attribute-label {
+    width: 80px;
+}
