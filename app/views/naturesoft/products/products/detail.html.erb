@@ -98,7 +98,7 @@
                 <!-- block best sellers -->
                 <% if @on_sales_products.present? and @on_sales_products.count >1 %>
                     <div class="block left-module">
-                        <p class="title_block">ON SALE</p>
+                        <p class="title_block">SẢN PHẨM KHUYẾN MÃI</p>
                         <div class="block_content product-onsale">
                             <ul class="product-list owl-carousel" data-loop="true" data-nav = "false" data-margin = "0" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
                                 <% @on_sales_products.each do |item| %>
@@ -127,7 +127,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-bottom">
-                                                <a class="btn-add-cart" title="Add to Cart" href="#add">Add to Cart</a>
+                                                <a class="btn-add-cart" title="Add to Cart" href="#add">Thêm vào giỏ hàng</a>
                                             </div>
                                         </div>
                                     </li>
