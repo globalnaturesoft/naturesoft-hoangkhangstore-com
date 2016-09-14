@@ -31,3 +31,7 @@ a:hover {
 #product .pb-right-column .form-option .attributes .attribute-label {
     width: 80px;
 }
+#contact #btn-send-contact {
+    padding-left: 42.5%;
+    padding-right: 42.5%;
+}

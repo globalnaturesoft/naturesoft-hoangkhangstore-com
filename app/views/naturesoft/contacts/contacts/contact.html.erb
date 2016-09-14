@@ -10,41 +10,61 @@
         <!-- ./breadcrumb -->
         <!-- page heading-->
         <h2 class="page-heading">
-            <span class="page-heading-title2">Contact Us</span>
+            <span class="page-heading-title2">Liên Hệ</span>
         </h2>
         <!-- ../page heading-->
         <div id="contact" class="page-content page-contact">
             <div id="message-box-conact"></div>
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="page-subheading">CONTACT FORM</h3>
+                    <h3 class="page-subheading">Biểu mẫu</h3>
                     <div class="contact-form-box">
                         <div class="form-selector">
-                            <label>Subject Heading</label>
+                            <label>Quý khách đang quan tâm chủ đề gì?</label>
                             <select class="form-control input-sm" id="subject">
-                                <option value="Customer service">Customer service</option>
-                                <option value="Webmaster">Webmaster</option>
+                                <option value="" disabled selected hidden>- Chọn chủ đề (bắt buộc) -</option>
+                                <option value="1">Tư vấn</option>
+                                <option value="2">Khiếu nại - Phản ánh</option>
+                                <option value="3">Hợp tác với TimMuaCongNghe.vn</option>
+                                <option value="4">Góp ý cải tiến</option>
                             </select>
                         </div>
+                        
                         <div class="form-selector">
-                            <label>Email address</label>
-                            <input type="text" class="form-control input-sm" id="email" />
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Họ tên <strong>*</strong></label>
+                                    <input type="text" class="form-control input-sm" id="name" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Mã đơn hàng (nếu có)</label>
+                                    <input type="text" class="form-control input-sm" id="order_reference" />
+                                </div>
+                            </div>
                         </div>
                         <div class="form-selector">
-                            <label>Order reference</label>
-                            <input type="text" class="form-control input-sm" id="order_reference" />
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Điện thoại liên hệ <strong>*</strong></label>
+                                    <input type="text" class="form-control input-sm" id="phone" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Địa chỉ email <strong>*</strong></label>
+                                    <input type="text" class="form-control input-sm" id="email" />
+                                </div>
+                            </div>
                         </div>
                         <div class="form-selector">
-                            <label>Message</label>
-                            <textarea class="form-control input-sm" rows="10" id="message"></textarea>
+                            <label>Message <strong>*</strong></label>
+                            <textarea class="form-control input-sm" rows="3" id="message"></textarea>
                         </div>
                         <div class="form-selector">
-                            <button id="btn-send-contact" class="btn">Send</button>
+                            <button id="btn-send-contact" class="btn">GỬI LIÊN HỆ</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6" id="contact_form_map">
-                    <h3 class="page-subheading">Information</h3>
+                    <h3 class="page-subheading">Thông tin</h3>
                     <p>Lorem ipsum dolor sit amet onsectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor dapibus eget. Mauris tincidunt aliquam lectus sed vestibulum. Vestibulum bibendum suscipit mattis.</p>
                     <br/>
                     <ul>
@@ -54,10 +74,10 @@
                     </ul>
                     <br/>
                     <ul class="store_info">
-                        <li><i class="fa fa-home"></i>Our business address is 1063 Freelon Street San Francisco, CA 95108</li>
-                        <li><i class="fa fa-phone"></i><span>+ 021.343.7575</span></li>
-                        <li><i class="fa fa-phone"></i><span>+ 020.566.6666</span></li>
-                        <li><i class="fa fa-envelope"></i>Email: <span><a href="mailto:support@kutetheme.com">support@kutetheme.com</a></span></li>
+                        <li><i class="fa fa-home"></i>Công ty TNHH Giải pháp CNTT & TT Hoàng Khang (đơn vị chủ quản)</li>
+                        <li><i class="fa fa-map-marker"></i>Số 188, Đường số 1, Phường 16, Quận Gò Vấp, TP. Hồ Chí Minh</li>
+                        <li><i class="fa fa-phone"></i><span>(08) 3984 7690</span></li>
+                        <li><i class="fa fa-envelope"></i><span><a href="mailto:kinhdoanh@hoangkhang.con.vn">kinhdoanh@hoangkhang.com.vn</a></span></li>
                     </ul>                
                     </div>
             </div>
