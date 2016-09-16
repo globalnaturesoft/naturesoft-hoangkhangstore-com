@@ -1,14 +1,14 @@
 #address-list .tit-name {
-    width: 30px;
+    width: 30px !important;
 }
 .product-list.list .add-to-cart {
-    width: 170px;
+    width: 170px !important;
 }
 .product-list.list .add-to-cart a {
-    width: 156px;
+    width: 156px !important;
 }
 .product-list.list .quick-view {
-    right: 28px;
+    right: 28px !important;
 }
 #main-menu .navbar .navbar-nav>li:hover, #main-menu .navbar .navbar-nav>li.active {
     background: #006a94;
