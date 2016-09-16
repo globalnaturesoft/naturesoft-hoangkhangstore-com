@@ -18,93 +18,37 @@
             <!-- Left colunm -->
             <div class="column col-xs-12 col-sm-3" id="left_column">
                 <!-- block best sellers -->
-                <div class="block left-module">
-                    <p class="title_block">NEW PRODUCTS</p>
-                    <div class="block_content">
-                        <ul class="products-block best-sell">
-                                <li>
-                                    <div class="products-block-left">
-                                        <a href="#">
-                                            <img src="/frontend/assets/data/product-100x122.jpg" alt="SPECIAL PRODUCTS">
-                                        </a>
-                                    </div>
-                                    <div class="products-block-right">
-                                        <p class="product-name">
-                                            <a href="#">Woman Within Plus Size Flared</a>
-                                        </p>
-                                        <p class="product-price">$38,95</p>
-                                        <p class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="products-block-left">
-                                        <a href="#">
-                                            <img src="/frontend/assets/data/p11.jpg" alt="SPECIAL PRODUCTS">
-                                        </a>
-                                    </div>
-                                    <div class="products-block-right">
-                                        <p class="product-name">
-                                            <a href="#">Woman Within Plus Size Flared</a>
-                                        </p>
-                                        <p class="product-price">$38,95</p>
-                                        <p class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="products-block-left">
-                                        <a href="#">
-                                            <img src="/frontend/assets/data/p12.jpg" alt="SPECIAL PRODUCTS">
-                                        </a>
-                                    </div>
-                                    <div class="products-block-right">
-                                        <p class="product-name">
-                                            <a href="#">Plus Size Rock Star Skirt</a>
-                                        </p>
-                                        <p class="product-price">$38,95</p>
-                                        <p class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="products-block-left">
-                                        <a href="#">
-                                            <img src="/frontend/assets/data/p52.jpg" alt="SPECIAL PRODUCTS">
-                                        </a>
-                                    </div>
-                                    <div class="products-block-right">
-                                        <p class="product-name">
-                                            <a href="#">Plus Size Rock Star Skirt</a>
-                                        </p>
-                                        <p class="product-price">$38,95</p>
-                                        <p class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </p>
-                                    </div>
-                                </li>
+                <% if @newest_products.present? %>
+                    <div class="block left-module">
+                        <p class="title_block">SẢN PHẨM MỚI</p>
+                        <div class="block_content">
+                            <ul class="products-block best-sell">
+                                <% @newest_products.each do |item| %>
+                                    <li>
+                                        <div class="products-block-left">
+                                            <a href="#">
+                                                <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 100x122"), naturesoft_products.detail_products_path(id: item.id) %>
+                                            </a>
+                                        </div>
+                                        <div class="products-block-right">
+                                            <p class="product-name">
+                                                <%= link_to truncate(item.name, length: 40), naturesoft_products.detail_products_path(id: item.id) %>
+                                            </p>
+                                            <p class="product-price"><%= format_number(item.new_price) %> đ</p>
+                                            <p class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </p>
+                                        </div>
+                                    </li>
+                                <% end %>
                             </ul>
+                        </div>
                     </div>
-                </div>
+                <% end %>
                 <!-- ./block best sellers  -->
                 <!-- block category -->
                 <div class="block left-module">
@@ -152,94 +96,46 @@
                 </div>
                 <!--./left silde-->
                 <!-- block best sellers -->
-                <div class="block left-module">
-                    <p class="title_block">ON SALE</p>
-                    <div class="block_content product-onsale">
-                        <ul class="product-list owl-carousel" data-loop="true" data-nav = "false" data-margin = "0" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
-                            <li>
-                                <div class="product-container">
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="/frontend/assets/data/product-260x317.jpg" />
-                                        </a>
-                                        <div class="price-percent-reduction2">-30% OFF</div>
-                                    </div>
-                                    <div class="right-block">
-                                        <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                        <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+                <% if @on_sales_products.present? and @on_sales_products.count >1 %>
+                    <div class="block left-module">
+                        <p class="title_block">SẢN PHẨM KHUYẾN MÃI</p>
+                        <div class="block_content product-onsale">
+                            <ul class="product-list owl-carousel" data-loop="true" data-nav = "false" data-margin = "0" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
+                                <% @on_sales_products.each do |item| %>
+                                    <li>
+                                        <div class="product-container">
+                                            <div class="left-block">
+                                                <a href="#">
+                                                    <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 260x317", class: "img-responsive"), naturesoft_products.detail_products_path(id: item.id) %>
+                                                </a>
+                                                <div class="price-percent-reduction2">-30% OFF</div>
+                                            </div>
+                                            <div class="right-block">
+                                                <h5 class="product-name">
+                                                    <%= link_to truncate(item.name, length: 30), naturesoft_products.detail_products_path(id: item.id) %>
+                                                </h5>
+                                                <div class="product-star">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-half-o"></i>
+                                                </div>
+                                                <div class="content_price">
+                                                    <span class="price product-price"><%= format_number(item.new_price) %> đ</span>
+                                                    <span class="price old-price"><%= format_number(item.old_price) + " đ" if !item.old_price.nil? %></span>
+                                                </div>
+                                            </div>
+                                            <div class="product-bottom">
+                                                <a class="btn-add-cart" title="Add to Cart" href="#add">Thêm vào giỏ hàng</a>
+                                            </div>
                                         </div>
-                                        <div class="content_price">
-                                            <span class="price product-price">$38,95</span>
-                                            <span class="price old-price">$52,00</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-bottom">
-                                        <a class="btn-add-cart" title="Add to Cart" href="#add">Add to Cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="product-container">
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="/frontend/assets/data/p35.jpg" />
-                                        </a>
-                                        <div class="price-percent-reduction2">-10% OFF</div>
-                                    </div>
-                                    <div class="right-block">
-                                        <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                        <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </div>
-                                        <div class="content_price">
-                                            <span class="price product-price">$38,95</span>
-                                            <span class="price old-price">$52,00</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-bottom">
-                                        <a class="btn-add-cart" title="Add to Cart" href="#add">Add to Cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="product-container">
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="/frontend/assets/data/p37.jpg" />
-                                        </a>
-                                        <div class="price-percent-reduction2">-42% OFF</div>
-                                    </div>
-                                    <div class="right-block">
-                                        <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                        <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </div>
-                                        <div class="content_price">
-                                            <span class="price product-price">$38,95</span>
-                                            <span class="price old-price">$52,00</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-bottom">
-                                        <a class="btn-add-cart" title="Add to Cart" href="#add">Add to Cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                    </li>
+                                <% end %>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                <% end %>
                 <!-- ./block best sellers  -->
                 <!-- left silide -->
                 <div class="col-left-slide left-module">
@@ -259,47 +155,49 @@
                                 <!-- product-imge-->
                                 <div class="product-image">
                                     <div class="product-full">
-                                        <img id="product-zoom" src='/frontend/assets/data/product-s3-420x512.jpg' data-zoom-image="/frontend/assets/data/product-s3-850x1036.jpg"/>
+                                        <img id="product-zoom" src='<%= @product.images.first.image_url.big %>' data-zoom-image="<%= @product.images.first.image_url.big %>"/>
                                     </div>
                                     <div class="product-img-thumb" id="gallery_01">
                                         <ul class="owl-carousel" data-items="3" data-nav="true" data-dots="false" data-margin="20" data-loop="false">
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s3-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s3-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s3-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s2-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s2-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s2-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-420x512.jpg" data-zoom-image="/frontend/assets/data/product-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s4-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s4-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s4-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s5-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s5-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s5-100x122.jpg" /> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-image="/frontend/assets/data/product-s6-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s6-850x1036.jpg">
-                                                    <img id="product-zoom"  src="/frontend/assets/data/product-s6-100x122.jpg" /> 
-                                                </a>
-                                            </li>
+                                            <% @product.images.each do |item| %>
+                                                <li>
+                                                    <a href="#" data-image="<%= item.image_url.big %>" data-zoom-image="<%= item.image_url.big %>">
+                                                        <img id="product-zoom"  src="<%= item.image_url.big %>" /> 
+                                                    </a>
+                                                </li>
+                                            <% end %>
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-s2-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s2-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-s2-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-420x512.jpg" data-zoom-image="/frontend/assets/data/product-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-s4-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s4-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-s4-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-s5-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s5-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-s5-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
+                                            <!--<li>-->
+                                            <!--    <a href="#" data-image="/frontend/assets/data/product-s6-420x512.jpg" data-zoom-image="/frontend/assets/data/product-s6-850x1036.jpg">-->
+                                            <!--        <img id="product-zoom"  src="/frontend/assets/data/product-s6-100x122.jpg" /> -->
+                                            <!--    </a>-->
+                                            <!--</li>-->
                                         </ul>
                                     </div>
                                 </div>
                                 <!-- product-imge-->
                             </div>
                             <div class="pb-right-column col-xs-12 col-sm-6">
-                                <h1 class="product-name">Maecenas consequat mauris</h1>
+                                <h1 class="product-name"><%= @product.name %></h1>
                                 <div class="product-comments">
                                     <div class="product-star">
                                         <i class="fa fa-star"></i>
@@ -314,22 +212,22 @@
                                     </div>
                                 </div>
                                 <div class="product-price-group">
-                                    <span class="price">$38.95</span>
-                                    <span class="old-price">$52.00</span>
+                                    <span class="price"><%= format_number(@product.new_price) %> đ</span>
+                                    <span class="old-price"><%= format_number(@product.old_price) + " đ" if !@product.old_price.nil? %></span>
                                     <span class="discount">-30%</span>
                                 </div>
                                 <div class="info-orther">
-                                    <p>Item Code: #453217907</p>
-                                    <p>Availability: <span class="in-stock">In stock</span></p>
-                                    <p>Condition: New</p>
+                                    <p>Mã sản phẩm: <%= @product.code %></p>
+                                    <p>Trạng thái: <span class="in-stock">Còn hàng</span></p>
+                                    <p>Tình trạng hàng hóa: Mới</p>
                                 </div>
                                 <div class="product-desc">
-                                    Vestibulum eu odio. Suspendisse potenti. Morbi mollis tellus ac sapien. Praesent egestas tristique nibh. Nullam dictum felis eu pede mollis pretium.Fusce egestas elit eget lorem. 
+                                    <%= @product.display_short_description if !@product.short_description.nil? %>
                                 </div>
                                 <div class="form-option">
-                                    <p class="form-option-title">Available Options:</p>
+                                    <p class="form-option-title">Tùy chọn có sẵn:</p>
                                     <div class="attributes">
-                                        <div class="attribute-label">Color:</div>
+                                        <div class="attribute-label">Màu sắc:</div>
                                         <div class="attribute-list">
                                             <ul class="list-color">
                                                 <li style="background:#0c3b90;"><a href="#">red</a></li>
@@ -342,7 +240,7 @@
                                         </div>
                                     </div>
                                     <div class="attributes">
-                                        <div class="attribute-label">Qty:</div>
+                                        <div class="attribute-label">Số lượng:</div>
                                         <div class="attribute-list product-qty">
                                             <div class="qty">
                                                 <input id="option-product-qty" type="text" value="1">
@@ -372,14 +270,14 @@
                                 </div>
                                 <div class="form-action">
                                     <div class="button-group">
-                                        <a class="btn-add-cart" href="#">Add to cart</a>
+                                        <a class="btn-add-cart" href="#">Thêm vào giỏ hàng</a>
                                     </div>
                                     <div class="button-group">
                                         <a class="wishlist" href="#"><i class="fa fa-heart-o"></i>
-                                        <br>Wishlist</a>
+                                        <br>Yêu thích</a>
                                         <a class="compare" href="#"><i class="fa fa-signal"></i>
                                         <br>        
-                                        Compare</a>
+                                        So sánh</a>
                                     </div>
                                 </div>
                                 <div class="form-share">
@@ -396,28 +294,18 @@
                         <div class="product-tab">
                             <ul class="nav-tab">
                                 <li class="active">
-                                    <a aria-expanded="false" data-toggle="tab" href="#product-detail">Product Details</a>
+                                    <a aria-expanded="false" data-toggle="tab" href="#product-detail">Mô tả chi tiết</a>
                                 </li>
                                 <li>
-                                    <a aria-expanded="true" data-toggle="tab" href="#information">information</a>
+                                    <a aria-expanded="true" data-toggle="tab" href="#information">Thông số kỹ thuật</a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#reviews">reviews</a>
-                                </li>
-                                <li>
-                                    <a data-toggle="tab" href="#extra-tabs">Extra Tabs</a>
-                                </li>
-                                <li>
-                                    <a data-toggle="tab" href="#guarantees">guarantees</a>
+                                    <a data-toggle="tab" href="#reviews">Đánh giá</a>
                                 </li>
                             </ul>
                             <div class="tab-container">
                                 <div id="product-detail" class="tab-panel active">
-                                    <p>Morbi mollis tellus ac sapien. Nunc nec neque. Praesent nec nisl a purus blandit viverra. Nunc nec neque. Pellentesque auctor neque nec urna.</p>
-
-                                    <p>Curabitur suscipit suscipit tellus. Cras id dui. Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas vestibulum mollis diam.</p>
-
-                                    <p>Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Sed lectus. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Nam at tortor in tellus interdum sagittis. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est.</p>
+                                    <%= @product.description.html_safe if !@product.description.nil? %>
                                 </div>
                                 <div id="information" class="tab-panel">
                                     <table class="table table-bordered">
@@ -440,7 +328,7 @@
                                         <div class="comment row">
                                             <div class="col-sm-3 author">
                                                 <div class="grade">
-                                                    <span>Grade</span>
+                                                    <span>Đánh giá</span>
                                                     <span class="reviewRating">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -450,18 +338,18 @@
                                                     </span>
                                                 </div>
                                                 <div class="info-author">
-                                                    <span><strong>Jame</strong></span>
+                                                    <span><strong>Huy...</strong></span>
                                                     <em>04/08/2015</em>
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 commnet-dettail">
-                                                Phasellus accumsan cursus velit. Pellentesque egestas, neque sit amet convallis pulvinar
+                                                Sản phẩm tốt, chất lượng phục vụ chu đáo
                                             </div>
                                         </div>
                                         <div class="comment row">
                                             <div class="col-sm-3 author">
                                                 <div class="grade">
-                                                    <span>Grade</span>
+                                                    <span>Đánh giá</span>
                                                     <span class="reviewRating">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -471,299 +359,110 @@
                                                     </span>
                                                 </div>
                                                 <div class="info-author">
-                                                    <span><strong>Author</strong></span>
+                                                    <span><strong>Đức...</strong></span>
                                                     <em>04/08/2015</em>
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 commnet-dettail">
-                                                Phasellus accumsan cursus velit. Pellentesque egestas, neque sit amet convallis pulvinar
+                                                Tuyệt vời!
                                             </div>
                                         </div>
                                         <p>
-                                            <a class="btn-comment" href="#">Write your review !</a>
+                                            <a class="btn-comment" href="#">Viết đánh giá của bạn !</a>
                                         </p>
                                     </div>
                                     
-                                </div>
-                                <div id="extra-tabs" class="tab-panel">
-                                    <p>Phasellus accumsan cursus velit. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Sed lectus. Sed a libero. Vestibulum eu odio.</p>
-
-                                    <p>Maecenas vestibulum mollis diam. In consectetuer turpis ut velit. Curabitur at lacus ac velit ornare lobortis. Praesent ac sem eget est egestas volutpat. Nam eget dui.</p>
-
-                                    <p>Maecenas nec odio et ante tincidunt tempus. Vestibulum suscipit nulla quis orci. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Aenean ut eros et nisl sagittis vestibulum. Aliquam eu nunc.</p> 
-                                </div>
-                                <div id="guarantees" class="tab-panel">
-                                    <p>Phasellus accumsan cursus velit. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Sed lectus. Sed a libero. Vestibulum eu odio.</p>
-
-                                    <p>Maecenas vestibulum mollis diam. In consectetuer turpis ut velit. Curabitur at lacus ac velit ornare lobortis. Praesent ac sem eget est egestas volutpat. Nam eget dui.</p>
-
-                                    <p>Maecenas nec odio et ante tincidunt tempus. Vestibulum suscipit nulla quis orci. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Aenean ut eros et nisl sagittis vestibulum. Aliquam eu nunc.</p> 
-                                    <p>Maecenas vestibulum mollis diam. In consectetuer turpis ut velit. Curabitur at lacus ac velit ornare lobortis. Praesent ac sem eget est egestas volutpat. Nam eget dui.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- ./tab product -->
                         <!-- box product -->
-                        <div class="page-product-box">
-                            <h3 class="heading">Related Products</h3>
-                            <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
-                                <li>
-                                    <div class="product-container">
-                                        <div class="left-block">
-                                            <a href="#">
-                                                <img class="img-responsive" alt="product" src="/frontend/assets/data/p40.jpg" />
-                                            </a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
+                        <% if @product.get_related_products.present? %>
+                            <div class="page-product-box">
+                                <h3 class="heading">Sản Phẩm Liên Quan</h3>
+                                <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
+                                    <% @product.get_related_products.each do |item| %>
+                                        <li>
+                                            <div class="product-container">
+                                                <div class="left-block">
+                                                    <a href="#">
+                                                        <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 300x366", class: "img-responsive"), naturesoft_products.detail_products_path(id: item.id) %>
+                                                    </a>
+                                                    <div class="quick-view">
+                                                            <a title="Add to my wishlist" class="heart" href="#"></a>
+                                                            <a title="Add to compare" class="compare" href="#"></a>
+                                                            <a title="Quick view" class="search" href="#"></a>
+                                                    </div>
+                                                    <div class="add-to-cart">
+                                                        <a title="Add to Cart" href="#add">Thêm vào giỏ hàng</a>
+                                                    </div>
+                                                </div>
+                                                <div class="right-block">
+                                                    <h5 class="product-name">
+                                                        <%= link_to truncate(item.name, length: 30), naturesoft_products.detail_products_path(id: item.id) %>
+                                                    </h5>
+                                                    <div class="product-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-o"></i>
+                                                    </div>
+                                                    <div class="content_price">
+                                                        <span class="price product-price"><%= format_number(item.new_price) %> đ</span>
+                                                        <span class="price old-price"><%= format_number(item.old_price) + " đ" if !item.old_price.nil? %></span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#add">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-container">
-                                        <div class="left-block">
-                                            <a href="#">
-                                                <img class="img-responsive" alt="product" src="/frontend/assets/data/p35.jpg" />
-                                            </a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#add">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-container">
-                                        <div class="left-block">
-                                            <a href="#">
-                                                <img class="img-responsive" alt="product" src="/frontend/assets/data/p37.jpg" />
-                                            </a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#add">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-container">
-                                        <div class="left-block">
-                                            <a href="#">
-                                                <img class="img-responsive" alt="product" src="/frontend/assets/data/p39.jpg" />
-                                            </a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#add">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                                        </li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        <% end %>
                         <!-- ./box product -->
                         <!-- box product -->
-                        <div class="page-product-box">
-                            <h3 class="heading">You might also like</h3>
-                            <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
-                                <li>
-                                    <div class="product-container">
-                                        <div class="left-block">
-                                            <a href="#">
-                                                <img class="img-responsive" alt="product" src="/frontend/assets/data/p97.jpg" />
-                                            </a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
+                        <% if @product.get_recommended_products.present? %>
+                            <div class="page-product-box">
+                                <h3 class="heading">Có Thể Bạn Thích</h3>
+                                <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
+                                    <% @product.get_recommended_products.each do |item| %>
+                                        <li>
+                                            <div class="product-container">
+                                                <div class="left-block">
+                                                    <a href="#">
+                                                        <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 300x366", class: "img-responsive"), naturesoft_products.detail_products_path(id: item.id) %>
+                                                    </a>
+                                                    <div class="quick-view">
+                                                            <a title="Add to my wishlist" class="heart" href="#"></a>
+                                                            <a title="Add to compare" class="compare" href="#"></a>
+                                                            <a title="Quick view" class="search" href="#"></a>
+                                                    </div>
+                                                    <div class="add-to-cart">
+                                                        <a title="Add to Cart" href="#add">Thêm vào giỏ hàng</a>
+                                                    </div>
+                                                </div>
+                                                <div class="right-block">
+                                                    <h5 class="product-name">
+                                                        <%= link_to truncate(item.name, length: 30), naturesoft_products.detail_products_path(id: item.id) %>
+                                                    </h5>
+                                                    <div class="product-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-o"></i>
+                                                    </div>
+                                                    <div class="content_price">
+                                                        <span class="price product-price"><%= format_number(item.new_price) %> đ</span>
+                                                        <span class="price old-price"><%= format_number(item.old_price) + " đ" if !item.old_price.nil? %></span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#add">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-container">
-                                        <div class="left-block">
-                                            <a href="#">
-                                                <img class="img-responsive" alt="product" src="/frontend/assets/data/p34.jpg" />
-                                            </a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#add">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-container">
-                                        <div class="left-block">
-                                            <a href="#">
-                                                <img class="img-responsive" alt="product" src="/frontend/assets/data/p36.jpg" />
-                                            </a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#add">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="product-container">
-                                        <div class="left-block">
-                                            <a href="#">
-                                                <img class="img-responsive" alt="product" src="/frontend/assets/data/p36.jpg" />
-                                            </a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#add">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                                        </li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        <% end %>
                         <!-- ./box product -->
                     </div>
                 <!-- Product -->
