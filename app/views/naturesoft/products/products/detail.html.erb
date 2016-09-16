@@ -27,14 +27,14 @@
                                     <li>
                                         <div class="products-block-left">
                                             <a href="#">
-                                                <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 100x122"), naturesoft_products.detail_products_path(id: item.id) %>
+                                                <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 100x122"), naturesoft_products.detail_products_path(product_id: item) %>
                                             </a>
                                         </div>
                                         <div class="products-block-right">
                                             <p class="product-name">
-                                                <%= link_to truncate(item.name, length: 40), naturesoft_products.detail_products_path(id: item.id) %>
+                                                <%= link_to truncate(item.name, length: 40), naturesoft_products.detail_products_path(product_id: item) %>
                                             </p>
-                                            <p class="product-price"><%= format_number(item.new_price) %> đ</p>
+                                            <p class="product-price"><%= format_number(item.new_price) %> VNĐ</p>
                                             <p class="product-star">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -106,13 +106,13 @@
                                         <div class="product-container">
                                             <div class="left-block">
                                                 <a href="#">
-                                                    <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 260x317", class: "img-responsive"), naturesoft_products.detail_products_path(id: item.id) %>
+                                                    <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 260x317", class: "img-responsive"), naturesoft_products.detail_products_path(product_id: item) %>
                                                 </a>
                                                 <div class="price-percent-reduction2">-30% OFF</div>
                                             </div>
                                             <div class="right-block">
                                                 <h5 class="product-name">
-                                                    <%= link_to truncate(item.name, length: 30), naturesoft_products.detail_products_path(id: item.id) %>
+                                                    <%= link_to truncate(item.name, length: 30), naturesoft_products.detail_products_path(product_id: item) %>
                                                 </h5>
                                                 <div class="product-star">
                                                     <i class="fa fa-star"></i>
@@ -270,7 +270,7 @@
                                 </div>
                                 <div class="form-action">
                                     <div class="button-group">
-                                        <a class="btn-add-cart" href="#">Thêm vào giỏ hàng</a>
+                                        <%= button_to 'Thêm vào giỏ hàng', cart_items_path(product_id: @product.id), class: "btn-add-cart" %>
                                     </div>
                                     <div class="button-group">
                                         <a class="wishlist" href="#"><i class="fa fa-heart-o"></i>
@@ -386,7 +386,7 @@
                                             <div class="product-container">
                                                 <div class="left-block">
                                                     <a href="#">
-                                                        <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 300x366", class: "img-responsive"), naturesoft_products.detail_products_path(id: item.id) %>
+                                                        <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 300x366", class: "img-responsive"), naturesoft_products.detail_products_path(product_id: item) %>
                                                     </a>
                                                     <div class="quick-view">
                                                             <a title="Add to my wishlist" class="heart" href="#"></a>
@@ -399,7 +399,7 @@
                                                 </div>
                                                 <div class="right-block">
                                                     <h5 class="product-name">
-                                                        <%= link_to truncate(item.name, length: 30), naturesoft_products.detail_products_path(id: item.id) %>
+                                                        <%= link_to truncate(item.name, length: 30), naturesoft_products.detail_products_path(product_id: item) %>
                                                     </h5>
                                                     <div class="product-star">
                                                         <i class="fa fa-star"></i>
@@ -430,7 +430,7 @@
                                             <div class="product-container">
                                                 <div class="left-block">
                                                     <a href="#">
-                                                        <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 300x366", class: "img-responsive"), naturesoft_products.detail_products_path(id: item.id) %>
+                                                        <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 300x366", class: "img-responsive"), naturesoft_products.detail_products_path(product_id: item) %>
                                                     </a>
                                                     <div class="quick-view">
                                                             <a title="Add to my wishlist" class="heart" href="#"></a>
@@ -443,7 +443,7 @@
                                                 </div>
                                                 <div class="right-block">
                                                     <h5 class="product-name">
-                                                        <%= link_to truncate(item.name, length: 30), naturesoft_products.detail_products_path(id: item.id) %>
+                                                        <%= link_to truncate(item.name, length: 30), naturesoft_products.detail_products_path(product_id: item) %>
                                                     </h5>
                                                     <div class="product-star">
                                                         <i class="fa fa-star"></i>
