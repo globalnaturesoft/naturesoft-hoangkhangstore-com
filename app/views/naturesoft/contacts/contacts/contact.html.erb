@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-selector">
                             <label>Message <strong>*</strong></label>
-                            <textarea class="form-control input-sm" rows="3" id="message"></textarea>
+                            <textarea class="form-control input-sm" rows="3" style="min-width:100%;max-width:100%" id="message"></textarea>
                         </div>
                         <div class="form-selector">
                             <button id="btn-send-contact" class="btn">GỬI LIÊN HỆ</button>
@@ -65,19 +65,21 @@
                 </div>
                 <div class="col-xs-12 col-sm-6" id="contact_form_map">
                     <h3 class="page-subheading">Thông tin</h3>
-                    <p>Lorem ipsum dolor sit amet onsectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor dapibus eget. Mauris tincidunt aliquam lectus sed vestibulum. Vestibulum bibendum suscipit mattis.</p>
-                    <br/>
+                    <p>
+                        <%= @contact_info.description %>
+                    </p>
+                    <!--<br/>
                     <ul>
                         <li>Praesent nec tincidunt turpis.</li>
                         <li>Aliquam et nisi risus.&nbsp;Cras ut varius ante.</li>
                         <li>Ut congue gravida dolor, vitae viverra dolor.</li>
-                    </ul>
+                    </ul>-->
                     <br/>
                     <ul class="store_info">
-                        <li><i class="fa fa-home"></i>Công ty TNHH Giải pháp CNTT & TT Hoàng Khang (đơn vị chủ quản)</li>
-                        <li><i class="fa fa-map-marker"></i>Số 188, Đường số 1, Phường 16, Quận Gò Vấp, TP. Hồ Chí Minh</li>
-                        <li><i class="fa fa-phone"></i><span>(08) 3984 7690</span></li>
-                        <li><i class="fa fa-envelope"></i><span><a href="mailto:kinhdoanh@hoangkhang.con.vn">kinhdoanh@hoangkhang.com.vn</a></span></li>
+                        <li><i class="icon-home2"></i> <%= @contact_info.company %></li>
+                        <li><i class="icon-location4"></i> <%= @contact_info.address %></li>
+                        <li><i class="icon-envelope"></i> <span><a href="mailto:<%= @contact_info.email %>"><%= @contact_info.email %></a></span></li>
+                        <li><i class="icon-phone"></i> <span><%= @contact_info.phone %></span></li>
                     </ul>                
                     </div>
             </div>
