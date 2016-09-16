@@ -306,7 +306,7 @@
             var data = {
 
             }
-            $.post('quick_view.html', data, function(response){
+            $.post(QUICK_VIEW_URL, data, function(response){
                 $.fancybox(response, {
                   // fancybox API options
                   fitToView: false,

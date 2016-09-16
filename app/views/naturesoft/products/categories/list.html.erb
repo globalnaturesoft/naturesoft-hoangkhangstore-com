@@ -108,6 +108,9 @@
                                 </div>
                             </div>
                         </li>
+                        <script>
+                            var QUICK_VIEW_URL = "<%= quick_view_path(product_id: item.id) %>"
+                        </script>
                         <% end %>
                     </ul>
                     <!-- ./PRODUCT LIST -->
@@ -124,7 +127,7 @@
                             <li><a href="#">5</a></li>
                             <li>
                               <a href="#" aria-label="Next">
-                                <span aria-hidden="true">Next &raquo;</span>
+                                <span aria-hidden="true">Trang sau &raquo;</span>
                               </a>
                             </li>
                           </ul>
@@ -132,16 +135,16 @@
                     </div>
                     <div class="show-product-item">
                         <select name="">
-                            <option value="">Show 18</option>
-                            <option value="">Show 20</option>
-                            <option value="">Show 50</option>
-                            <option value="">Show 100</option>
+                            <option value="">Hiển thị 18 sản phẩm.</option>
+                            <option value="">Hiển thị 20 sản phẩm.</option>
+                            <option value="">Hiển thị 50 sản phẩm.</option>
+                            <option value="">Hiển thị 100 sản phẩm.</option>
                         </select>
                     </div>
                     <div class="sort-product">
                         <select>
-                            <option value="">Product Name</option>
-                            <option value="">Price</option>
+                            <option value="">Tên sản phẩm</option>
+                            <option value="">Giá</option>
                         </select>
                         <div class="sort-product-icon">
                             <i class="fa fa-sort-alpha-asc"></i>
