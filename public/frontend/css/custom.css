@@ -51,3 +51,9 @@ a:hover {
     padding: 10px 20px;
     border: 1px solid #eaeaea;
 }
+label.error {
+    display: none !important;
+}
+.form-control.input-sm.error {
+    border-color: red !important;
+}

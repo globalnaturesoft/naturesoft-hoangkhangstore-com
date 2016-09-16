@@ -14,55 +14,63 @@
         </h2>
         <!-- ../page heading-->
         <div id="contact" class="page-content page-contact">
-            <div id="message-box-conact"></div>
+            
             <div class="row">
                 <div class="col-sm-6">
                     <h3 class="page-subheading">Biểu mẫu</h3>
-                    <div class="contact-form-box">
-                        <div class="form-selector">
-                            <label>Quý khách đang quan tâm chủ đề gì?</label>
-                            <select class="form-control input-sm" id="subject">
-                                <option value="" disabled selected hidden>- Chọn chủ đề (bắt buộc) -</option>
-                                <option value="1">Tư vấn</option>
-                                <option value="2">Khiếu nại - Phản ánh</option>
-                                <option value="3">Hợp tác với TimMuaCongNghe.vn</option>
-                                <option value="4">Góp ý cải tiến</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-selector">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label>Họ tên <strong>*</strong></label>
-                                    <input type="text" class="form-control input-sm" id="name" />
-                                </div>
-                                <div class="col-sm-6">
-                                    <label>Mã đơn hàng (nếu có)</label>
-                                    <input type="text" class="form-control input-sm" id="order_reference" />
+                    <%= form_for Naturesoft::Contacts::Contact.new, url: contacts_path, html: {class: "validate"} do |f| %>
+                        <div class="contact-form-box">
+                            <div id="message-box-conact">
+                                <% if notice.present? %>
+                                    <div id="message-box-conact"><div class="alert alert-info"><%= notice %></div></div>
+                                <% end %>
+                            </div>
+                            <div class="form-selector">
+                                <label>Quý khách đang quan tâm chủ đề gì?</label>
+                                <select class="form-control input-sm required" id="subject" name="contact[subject]">
+                                    <option value="" disabled selected hidden>- Chọn chủ đề (bắt buộc) -</option>
+                                    <option value="Tư vấn">Tư vấn</option>
+                                    <option value="Khiếu nại - Phản ánh">Khiếu nại - Phản ánh</option>
+                                    <option value="Hợp tác với TimMuaCongNghe.vn">Hợp tác với TimMuaCongNghe.vn</option>
+                                    <option value="Góp ý cải tiến">Góp ý cải tiến</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-selector">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Họ tên <strong>*</strong></label>
+                                        <%= f.text_field :last_name, class: "form-control input-sm required", id: "name" %>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Mã đơn hàng (nếu có)</label>
+                                        <input type="text" class="form-control input-sm" id="order_reference" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-selector">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label>Điện thoại liên hệ <strong>*</strong></label>
-                                    <input type="text" class="form-control input-sm" id="phone" />
-                                </div>
-                                <div class="col-sm-6">
-                                    <label>Địa chỉ email <strong>*</strong></label>
-                                    <input type="text" class="form-control input-sm" id="email" />
+                            <div class="form-selector">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Điện thoại liên hệ <strong>*</strong></label>
+                                        <%= f.text_field :phone, class: "form-control input-sm required", id: "phone" %>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Địa chỉ email <strong>*</strong></label>
+                                        <%= f.text_field :email, class: "form-control input-sm required", id: "email" %>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="form-selector">
+                                <label>Message <strong>*</strong></label>
+                                <%= f.text_area :message, class: "form-control input-sm required", id: "message", style: "max-width:100%", rows: "3" %>
+                            </div>
+                            <div class="form-selector">
+                                <button id="btn-send-contact" class="btn">GỬI LIÊN HỆ</button>
+                            </div>
                         </div>
-                        <div class="form-selector">
-                            <label>Message <strong>*</strong></label>
-                            <textarea class="form-control input-sm" rows="3" style="min-width:100%;max-width:100%" id="message"></textarea>
-                        </div>
-                        <div class="form-selector">
-                            <button id="btn-send-contact" class="btn">GỬI LIÊN HỆ</button>
-                        </div>
-                    </div>
+                    <% end %>
                 </div>
+                
                 <div class="col-xs-12 col-sm-6" id="contact_form_map">
                     <h3 class="page-subheading">Thông tin</h3>
                     <p>
@@ -81,7 +89,7 @@
                         <li><i class="icon-envelope"></i> <span><a href="mailto:<%= @contact_info.email %>"><%= @contact_info.email %></a></span></li>
                         <li><i class="icon-phone"></i> <span><%= @contact_info.phone %></span></li>
                     </ul>                
-                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -8,6 +8,6 @@ Naturesoft::Products::Engine.routes.draw do
 end
 Naturesoft::Contacts::Engine.routes.draw do
     get "lien-he.html" => "contacts#contact", as: :contacts
-    post "lien-he.html" => "contacts#contact"
+    post "lien-he.html" => "contacts#send_message"
     get "lien-he/gui-thanh-cong.html" => "contacts#success", as: :success
 end
