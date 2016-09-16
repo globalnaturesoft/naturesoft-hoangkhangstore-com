@@ -35,3 +35,9 @@ a:hover {
     padding-left: 42.5%;
     padding-right: 42.5%;
 }
+label.error {
+    display: none !important;
+}
+.form-control.input-sm.error {
+    border-color: red !important;
+}
