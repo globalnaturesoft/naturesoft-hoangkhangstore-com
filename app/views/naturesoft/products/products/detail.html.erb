@@ -394,7 +394,7 @@
                                                             <a title="Quick view" class="search" href="#"></a>
                                                     </div>
                                                     <div class="add-to-cart">
-                                                        <a title="Add to Cart" href="#add">Thêm vào giỏ hàng</a>
+                                                        <%= link_to "Thêm vào giỏ hàng", naturesoft_products.add_to_cart_cart_items_path(product_id: item.id), title: "Thêm vào giỏ hàng" %>
                                                     </div>
                                                 </div>
                                                 <div class="right-block">
@@ -438,7 +438,7 @@
                                                             <a title="Quick view" class="search" href="#"></a>
                                                     </div>
                                                     <div class="add-to-cart">
-                                                        <a title="Add to Cart" href="#add">Thêm vào giỏ hàng</a>
+                                                        <%= link_to "Thêm vào giỏ hàng", naturesoft_products.add_to_cart_cart_items_path(product_id: item.id), title: "Thêm vào giỏ hàng" %>
                                                     </div>
                                                 </div>
                                                 <div class="right-block">

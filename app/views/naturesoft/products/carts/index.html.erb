@@ -1,87 +1,92 @@
-<%= form_for @cart do |f| %>
-    <!-- page wapper-->
-    <div class="columns-container">
-        <div class="container" id="columns">
-            <!-- breadcrumb -->
-            <div class="breadcrumb clearfix">
-                <%= link_to "Trang Chủ", naturesoft_hoangkhangstore_com.root_path, class: "home" %>
-                <span class="navigation-pipe">&nbsp;</span>
-                <span class="navigation_page">Giỏ Hàng</span>
+
+<!-- page wapper-->
+<div class="columns-container">
+    <div class="container" id="columns">
+        <!-- breadcrumb -->
+        <div class="breadcrumb clearfix">
+            <%= link_to "Trang Chủ", naturesoft_hoangkhangstore_com.root_path, class: "home" %>
+            <span class="navigation-pipe">&nbsp;</span>
+            <span class="navigation_page">Giỏ Hàng</span>
+        </div>
+        <!-- ./breadcrumb -->
+        <!-- page heading-->
+        <h2 class="page-heading no-line">
+            <span class="page-heading-title2">Danh sách sản phẩm</span>
+        </h2>
+        <!-- ../page heading-->
+        <div class="page-content page-order">
+            <% if Naturesoft::Products::CartItem.number_items > 0 %>
+            <ul class="step">
+                <li class="current-step"><span>01. Danh sách</span></li>
+                <li><span>02. Đăng nhập</span></li>
+                <li><span>03. Thông tin đặt hàng</span></li>
+                <li><span>04. Thông tin giao hàng</span></li>
+                <li><span>05. Thanh toán</span></li>
+            </ul>
+            <% end %>
+            <div class="heading-counter warning">Giỏ hàng của bạn hiện có:
+                <span><%= Naturesoft::Products::CartItem.number_items %> sản phẩm.</span>
             </div>
-            <!-- ./breadcrumb -->
-            <!-- page heading-->
-            <h2 class="page-heading no-line">
-                <span class="page-heading-title2">Danh sách sản phẩm</span>
-            </h2>
-            <!-- ../page heading-->
-            <div class="page-content page-order">
-                <ul class="step">
-                    <li class="current-step"><span>01. Danh sách</span></li>
-                    <li><span>02. Đăng nhập</span></li>
-                    <li><span>03. Thông tin đặt hàng</span></li>
-                    <li><span>04. Thông tin giao hàng</span></li>
-                    <li><span>05. Thanh toán</span></li>
-                </ul>
-                <div class="heading-counter warning">Giỏ hàng của bạn hiện có:
-                    <span><%= Naturesoft::Products::CartItem.number_items %> sản phẩm.</span>
-                </div>
-                <div class="order-detail-content">
-                    <table class="table table-bordered table-responsive cart_summary">
-                        <thead>
-                            <tr>
-                                <th class="cart_product">Hình ảnh</th>
-                                <th>Thông tin sản phẩm</th>
-                                <th>Trạng thái</th>
-                                <th>Giá</th>
-                                <th>Số lượng</th>
-                                <th>Thành tiền</th>
-                                <th class="action"><i class="fa fa-trash-o"></i></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% @cart.cart_items.each do |item| %>
-                            <input type="hidden" name="cart_items[id]" value="<%= item.id %>">
-                            <tr>
-                                <td class="cart_product">
-                                    <%= link_to image_tag(image_src(item.product.main_image.image_url.small), alt: item.product.name), naturesoft_products.detail_products_path(product_id: item.product_id) %>
-                                </td>
-                                <td class="cart_description">
-                                    <p class="product-name"><%= link_to item.product.name, naturesoft_products.detail_products_path(product_id: item.product_id) %></p>
-                                    <small class="cart_ref">Mã sản phẩm: <%= item.product.code %></small><br>
-                                    <small><a href="#">Màu: Hồng</a></small><br>   
-                                    <small><a href="#">Size: S</a></small>
-                                </td>
-                                <td class="cart_avail"><span class="label label-success">Còn trong kho</span></td>
-                                <td class="price"><span><%= format_number(item.product.new_price) %> VNĐ</span></td>
-                                <td class="qty">
-                                    <input class="form-control input-sm" type="text" name="quantities[<%= item.id %>]" value="<%= item.quantity %>">
-                                    <a href=""><i class="fa fa-caret-up"></i></a>
-                                    <a href=""><i class="fa fa-caret-down"></i></a>
-                                </td>
-                                <td class="price">
-                                    <span><%= format_number(item.total_price) %> VNĐ</span>
-                                </td>
-                                <td class="action">
-                                    <%= link_to "Xóa sản phẩm này.", "" %>
-                                </td>
-                            </tr>
-                            <% end %>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2" rowspan="2"></td>
-                                <td colspan="3"><strong>TỔNG TIỀN</strong></td>
-                                <td colspan="2"><strong><%= format_number(@cart.total_order) %> VNĐ</strong></td>
-                            </tr>
-                        </tfoot>    
-                    </table>
-                    <div class="cart_navigation">
-                        <%= button_to "Cập nhật giỏ hàng", class: "prev-btn" %>
-                        <%= link_to "Bước tiếp theo", "", class: "next-btn" %>
-                    </div>
+            <% if Naturesoft::Products::CartItem.number_items > 0 %>
+            <%= form_for @cart do |f| %>
+            <div class="order-detail-content">
+                <table class="table table-bordered table-responsive cart_summary">
+                    <thead>
+                        <tr>
+                            <th class="cart_product">Hình ảnh</th>
+                            <th>Thông tin sản phẩm</th>
+                            <th>Trạng thái</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                            <th class="action"><i class="fa fa-trash-o"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @cart.cart_items.each do |item| %>
+                        <input type="hidden" name="cart_items[id]" value="<%= item.id %>">
+                        <tr>
+                            <td class="cart_product">
+                                <%= link_to image_tag(image_src(item.product.main_image.image_url.small), alt: item.product.name), naturesoft_products.detail_products_path(product_id: item.product_id) %>
+                            </td>
+                            <td class="cart_description">
+                                <p class="product-name"><%= link_to item.product.name, naturesoft_products.detail_products_path(product_id: item.product_id) %></p>
+                                <small class="cart_ref">Mã sản phẩm: <%= item.product.code %></small><br>
+                                <small><a href="">Màu: Hồng</a></small><br>   
+                                <small><a href="">Size: S</a></small>
+                            </td>
+                            <td class="cart_avail"><span class="label label-success">Còn trong kho</span></td>
+                            <td class="price"><span><%= format_number(item.product.new_price) %> VNĐ</span></td>
+                            <td class="qty">
+                                <input class="form-control input-sm" type="text" name="quantities[<%= item.id %>]" value="<%= item.quantity %>">
+                                <a href=""><i class="fa fa-caret-up"></i></a>
+                                <a href=""><i class="fa fa-caret-down"></i></a>
+                            </td>
+                            <td class="price">
+                                <span><%= format_number(item.total_price) %> VNĐ</span>
+                            </td>
+                            <td class="action">
+                                <%= link_to "Xóa sản phẩm này.", {controller: "naturesoft/products/carts", action: "index", do: "remove_cart_item", cart_item_id: item.id}  %>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" rowspan="2"></td>
+                            <td colspan="3"><strong>TỔNG TIỀN</strong></td>
+                            <td colspan="2"><strong><%= format_number(@cart.total_order) %> VNĐ</strong></td>
+                        </tr>
+                    </tfoot>    
+                </table>
+                <div class="cart_navigation">
+                    <%= button_to "Cập nhật giỏ hàng", class: "prev-btn" %>
+                    <%= link_to "Bước tiếp theo", "", class: "next-btn" %>
                 </div>
             </div>
+        <% end %>
+        <% end %>
         </div>
     </div>
-    <!-- ./page wapper-->
-<% end %>
+</div>
+<!-- ./page wapper-->
