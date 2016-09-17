@@ -2,15 +2,13 @@
     <div class="container" id="columns">
         <!-- breadcrumb -->
         <div class="breadcrumb clearfix">
-            <a class="home" href="#" title="Return to Home">Home</a>
+            <%= link_to "Trang Chủ", naturesoft_hoangkhangstore_com.root_path %>
+            <% @product.categories.each do |cat| %>
             <span class="navigation-pipe">&nbsp;</span>
-            <a href="#" title="Return to Home">Fashion</a>
+            <%= link_to cat.name, "" %>
+            <% end %>
             <span class="navigation-pipe">&nbsp;</span>
-            <a href="#" title="Return to Home">Women</a>
-            <span class="navigation-pipe">&nbsp;</span>
-            <a href="#" title="Return to Home">Dresses</a>
-            <span class="navigation-pipe">&nbsp;</span>
-            <span class="navigation_page">Maecenas consequat mauris</span>
+            <span class="navigation_page"><%= @product.name %></span>
         </div>
         <!-- ./breadcrumb -->
         <!-- row -->
@@ -207,8 +205,8 @@
                                         <i class="fa fa-star-half-o"></i>
                                     </div>
                                     <div class="comments-advices">
-                                        <a href="#">Based  on 3 ratings</a>
-                                        <a href="#"><i class="fa fa-pencil"></i> write a review</a>
+                                        <a href="">Có 3 đánh giá</a>
+                                        <a href=""><i class="fa fa-pencil"></i> Viết đánh giá</a>
                                     </div>
                                 </div>
                                 <div class="product-price-group">
@@ -367,9 +365,7 @@
                                                 Tuyệt vời!
                                             </div>
                                         </div>
-                                        <p>
-                                            <a class="btn-comment" href="#">Viết đánh giá của bạn !</a>
-                                        </p>
+                                        <p><a class="btn-comment" href="">Viết đánh giá của bạn !</a></p>
                                     </div>
                                     
                                 </div>
@@ -429,9 +425,7 @@
                                         <li>
                                             <div class="product-container">
                                                 <div class="left-block">
-                                                    <a href="#">
-                                                        <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 300x366", class: "img-responsive"), naturesoft_products.detail_products_path(product_id: item) %>
-                                                    </a>
+                                                    <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name + " 300x366", class: "img-responsive"), naturesoft_products.detail_products_path(product_id: item) %>
                                                     <div class="quick-view">
                                                             <a title="Add to my wishlist" class="heart" href="#"></a>
                                                             <a title="Add to compare" class="compare" href="#"></a>
