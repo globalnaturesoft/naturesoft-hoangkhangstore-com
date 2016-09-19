@@ -35,6 +35,22 @@ a:hover {
     padding-left: 42.5%;
     padding-right: 42.5%;
 }
+.page-order .cart_navigation input.prev-btn:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f021";
+    padding-right: 15px;
+}
+.page-order .cart_navigation input:hover {
+    background: #ff3366;
+    color: #fff;
+}
+.page-order .cart_navigation input.prev-btn {
+    float: left;
+}
+.page-order .cart_navigation input {
+    padding: 10px 20px;
+    border: 1px solid #eaeaea;
+}
 label.error {
     display: none !important;
 }

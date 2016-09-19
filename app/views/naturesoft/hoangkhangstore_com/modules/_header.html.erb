@@ -52,28 +52,26 @@
                 </form>
             </div>
             <div id="cart-block" class="col-xs-5 col-sm-2 shopping-cart-box">
-                <a class="cart-link" href="">
+                <a class="cart-link" href="<%= naturesoft_products.carts_path %>">
                     <span class="title">Giỏ hàng</span>
-                    <span class="total">50,000,000 VNĐ</span>
-                    <span class="notify notify-left">2</span>
+                    <span class="total"><%= format_number(@cart.total_order) %> VNĐ</span>
+                    <span class="notify notify-left"><%= Naturesoft::Products::CartItem.number_items %></span>
                 </a>
                 <div class="cart-block">
                     <div class="cart-block-content">
-                        <h5 class="cart-title">2 sản phẩm trong giỏ hàng</h5>
+                        <h5 class="cart-title">Giỏ hàng bạn hiện có: <%= Naturesoft::Products::CartItem.number_items %> sản phẩm.</h5>
                         <div class="cart-block-list">
                             <ul>
-                                <% (0..1).each do |item| %>
+                                <% @cart.cart_items.each do |item| %>
                                 <li class="product-info">
                                     <div class="p-left">
-                                        <a href="#" class="remove_link"></a>
-                                        <a href="#">
-                                        <img class="img-responsive" src="/frontend/assets/data/product-100x122.jpg" alt="p10">
-                                        </a>
+                                        <% link_to "", "", class: "remove_link" %>
+                                        <%= link_to image_tag(image_src(item.product.main_image.image_url.small), alt: item.product.name, class: "img-responsive"), naturesoft_products.detail_products_path(product_id: item.product_id) %>
                                     </div>
                                     <div class="p-right">
-                                        <p class="p-name">Tên sản phẩm</p>
-                                        <p class="p-rice">25,000,000 VNĐ</p>
-                                        <p>Qty: 1</p>
+                                        <p class="p-name"><%= link_to item.product.name, naturesoft_products.detail_products_path(product_id: item.product_id) %></p>
+                                        <p class="p-rice"><%= format_number(item.product.new_price) %> VNĐ</p>
+                                        <p>Số lượng: <%= item.quantity %></p>
                                     </div>
                                 </li>
                                 <% end %>
@@ -81,7 +79,7 @@
                         </div>
                         <div class="toal-cart">
                             <span>Tổng tiền</span>
-                            <span class="toal-price pull-right">50,000,000 VNĐ</span>
+                            <span class="toal-price pull-right"><%= format_number(@cart.total_order) %> VNĐ</span>
                         </div>
                         <div class="cart-buttons">
                             <%= link_to "Đặt hàng", "", class: "btn-check-out" %>

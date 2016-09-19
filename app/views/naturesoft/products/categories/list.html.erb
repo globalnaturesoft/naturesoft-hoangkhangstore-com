@@ -25,22 +25,22 @@
                 <div class="subcategories">
                     <ul>
                         <li class="current-categorie">
-                            <%= link_to "Đề cử", "" %>
+                            <%= link_to "Hãng sản xuất", "" %>
                         </li>
                         <li>
-                            <%= link_to "Khuyến mãi", "" %>
+                            <%= link_to "Apple", "" %>
                         </li>
                         <li>
-                            <%= link_to "Giao hàng miễn phí", "" %>
+                            <%= link_to "Dell", "" %>
                         </li>
                         <li>
-                            <%= link_to "Bán chạy", "" %>
+                            <%= link_to "HP", "" %>
                         </li>
                         <li>
-                            <%= link_to "Mới", "" %>
+                            <%= link_to "Asus", "" %>
                         </li>
                         <li>
-                            <%= link_to "Lượt xem", "" %>
+                            <%= link_to "Acer", "" %>
                         </li>
                     </ul>
                 </div>
@@ -64,18 +64,18 @@
                         <li class="col-sx-12 col-sm-4">
                             <div class="product-container">
                                 <div class="left-block">
-                                    <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name, class: "img-responsive"), naturesoft_products.detail_products_path %>
+                                    <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name, class: "img-responsive"), naturesoft_products.detail_products_path(product_id: item) %>
                                     <div class="quick-view">
                                             <a title="Add to my wishlist" class="heart" href="#"></a>
                                             <a title="Add to compare" class="compare" href="#"></a>
                                             <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#add">Thêm vào giỏ hàng</a>
+                                        <%= link_to "Thêm vào giỏ hàng", naturesoft_products.add_to_cart_cart_items_path(product_id: item.id), title: "Thêm vào giỏ hàng" %>
                                     </div>
                                 </div>
                                 <div class="right-block">
-                                    <h5 class="product-name"><%= link_to item.name, naturesoft_products.detail_products_path %></h5>
+                                    <h5 class="product-name"><%= link_to item.name, naturesoft_products.detail_products_path(product_id: item) %></h5>
                                     <div class="product-star">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
