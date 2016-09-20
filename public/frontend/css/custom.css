@@ -57,3 +57,17 @@ label.error {
 .form-control.input-sm.error {
     border-color: red !important;
 }
+.button-link-line {
+    margin-bottom: 20px !important;
+}
+.button-link:hover {
+    background: #ff3366;
+    border: 1px solid #ff3366;
+    color: #fff;
+}
+.button-link {
+    padding: 10px 20px;
+    border: 1px solid #eaeaea;
+    background: #666;
+    color: #fff;
+}

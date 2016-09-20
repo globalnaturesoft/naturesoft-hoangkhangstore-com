@@ -1,0 +1,61 @@
+
+<!-- page wapper-->
+<div class="columns-container">
+    <div class="container" id="columns">
+        <!-- breadcrumb -->
+        <div class="breadcrumb clearfix">
+            <%= link_to "Trang Chủ", naturesoft_hoangkhangstore_com.root_path, class: "home" %>
+            <span class="navigation-pipe">&nbsp;</span>
+            <span class="navigation_page">Giỏ Hàng</span>
+            <span class="navigation-pipe">&nbsp;</span>
+            <span class="navigation_page">Đăng ký/Đăng nhập</span>
+        </div>
+        <!-- ./breadcrumb -->
+        <!-- page heading-->
+        <h2 class="page-heading no-line">
+            <span class="page-heading-title2">Đăng ký/Đăng nhập</span>
+        </h2>
+        <!-- ../page heading-->
+        <div class="page-content page-order">
+            <ul class="step">
+                <li><span>01. Danh sách</span></li>
+                <li class="current-step"><span>02. Đăng nhập</span></li>
+                <li><span>03. Thông tin đặt hàng</span></li>
+                <li><span>04. Thông tin giao hàng</span></li>
+                <li><span>05. Thanh toán</span></li>
+            </ul>
+        </div>
+        <div class="page-content checkout-page">
+            <h3 class="checkout-sep">ĐĂNG NHẬP</h3>
+            <div class="box-border">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Đặt hàng không cần đăng ký hoặc đăng ký tài khoản</h4>
+                        <p>Lựa chọn hình thức đặt hàng:</p>
+                        <ul>
+                            <li><label><input type="radio" name="radio1">Đặt hàng không cần đăng ký</label></li>
+                            <li><label><input type="radio" name="radio1">Đăng ký</label></li>
+                        </ul>
+                        <br>
+                        <h4>Đăng ký và tiết kiệm thời gian!</h4>
+                        <p>Đăng ký tài khoản để thuận tiện cho lần mau tiếp theo:</p>
+                        <p><i class="fa fa-check-circle text-primary"></i> Đặt hàng nhanh chóng & đơn giản.</p>
+                        <p class="button-link-line"><i class="fa fa-check-circle text-primary"></i> Dể dàng trong việc theo dõi đơn hàng và lịch sử mua hàng.</p>
+                        <%= link_to "Bước tiếp theo", cart_customer_info_path, class: "button-link" %>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>Đăng nhập</h4>
+                        <p>Đã có tài khoản. Đăng nhập tại đây:</p>
+                        <label>Email</label>
+                        <input type="text" class="form-control input">
+                        <label>Mật khẩu</label>
+                        <input type="password" class="form-control input">
+                        <p><a href="">Quên mật khẩu?</a></p>
+                        <button class="button">Đăng nhập</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ./page wapper-->
