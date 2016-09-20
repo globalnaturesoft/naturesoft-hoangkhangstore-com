@@ -17,10 +17,10 @@
         <div class="page-content page-order">
             <% if Naturesoft::Products::CartItem.number_items > 0 %>
             <ul class="step">
-                <li class="current-step"><span>01. Danh sách</span></li>
-                <li><span>02. Đăng nhập</span></li>
-                <li><span>03. Thông tin đặt hàng</span></li>
-                <li><span>04. Thông tin giao hàng</span></li>
+                <a href="<%= naturesoft_products.carts_path %>"><li class="current-step"><span>01. Danh sách</span></li></a>
+                <a href="<%= naturesoft_products.cart_login_path %>"><li><span>02. Đăng nhập</span></li></a>
+                <a href="<%= naturesoft_products.cart_customer_info_path %>"><li><span>03. Thông tin đặt hàng</span></li></a>
+                <a href="<%= naturesoft_products.cart_delivery_info_path %>"><li><span>04. Thông tin giao hàng</span></li></a>
                 <li><span>05. Thanh toán</span></li>
             </ul>
             <% end %>
@@ -81,7 +81,7 @@
                 </table>
                 <div class="cart_navigation">
                     <%= button_to "Cập nhật giỏ hàng", class: "prev-btn" %>
-                    <%= link_to "Bước tiếp theo", cart_login_path, class: "next-btn" %>
+                    <%= link_to "Bước tiếp theo", naturesoft_products.cart_login_path, class: "next-btn" %>
                 </div>
             </div>
         <% end %>

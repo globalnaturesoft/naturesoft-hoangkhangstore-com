@@ -18,10 +18,10 @@
         <!-- ../page heading-->
         <div class="page-content page-order">
             <ul class="step">
-                <li><span>01. Danh sách</span></li>
-                <li class="current-step"><span>02. Đăng nhập</span></li>
-                <li><span>03. Thông tin đặt hàng</span></li>
-                <li><span>04. Thông tin giao hàng</span></li>
+                <a href="<%= naturesoft_products.carts_path %>"><li><span>01. Danh sách</span></li></a>
+                <a href="<%= naturesoft_products.cart_login_path %>"><li class="current-step"><span>02. Đăng nhập</span></li></a>
+                <a href="<%= naturesoft_products.cart_customer_info_path %>"><li><span>03. Thông tin đặt hàng</span></li></a>
+                <a href="<%= naturesoft_products.cart_delivery_info_path %>"><li><span>04. Thông tin giao hàng</span></li></a>
                 <li><span>05. Thanh toán</span></li>
             </ul>
         </div>
@@ -41,7 +41,7 @@
                         <p>Đăng ký tài khoản để thuận tiện cho lần mau tiếp theo:</p>
                         <p><i class="fa fa-check-circle text-primary"></i> Đặt hàng nhanh chóng & đơn giản.</p>
                         <p class="button-link-line"><i class="fa fa-check-circle text-primary"></i> Dể dàng trong việc theo dõi đơn hàng và lịch sử mua hàng.</p>
-                        <%= link_to "Bước tiếp theo", cart_customer_info_path, class: "button-link" %>
+                        <%= link_to "Bước tiếp theo", naturesoft_products.cart_customer_info_path, class: "button-link" %>
                     </div>
                     <div class="col-sm-6">
                         <h4>Đăng nhập</h4>
