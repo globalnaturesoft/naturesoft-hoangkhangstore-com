@@ -19,10 +19,12 @@
                 <div class="col-sm-6">
                     <h3 class="page-subheading">Biểu mẫu</h3>
                     <%= form_for Naturesoft::Contacts::Contact.new, url: contacts_path, html: {class: "validate"} do |f| %>
+                        
+                    <%= hidden_field_tag(:id, params[:id]) %>
                         <div class="contact-form-box">
                             <div id="message-box-conact">
                                 <% if notice.present? %>
-                                    <div id="message-box-conact"><div class="alert alert-info"><%= notice %></div></div>
+                                    <div id="message-box-conact"><div class="alert alert-info">Tin nhắn đã được gửi thành công! Chúng tôi sẽ liên hệ lại cho bạn trong thời gian sớm nhất</div></div>
                                 <% end %>
                             </div>
                             <div class="form-selector">
