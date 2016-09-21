@@ -11,7 +11,6 @@ Naturesoft::Products::Engine.routes.draw do
     get "gio-hang/thong-tin-giao-hang.html" => "carts#delivery_info", as: :cart_delivery_info
 end
 Naturesoft::Contacts::Engine.routes.draw do
-    get "lien-he.html" => "contacts#contact", as: :contacts
-    post "lien-he.html" => "contacts#send_message"
-    get "lien-he/gui-thanh-cong.html" => "contacts#success", as: :success
+    get "ve-chung-toi/gop-y-lien-he.html" => "contacts#contact", as: :contacts
+    post "ve-chung-toi/gop-y-lien-he.html" => "contacts#send_message"
 end
