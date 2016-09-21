@@ -1,0 +1,6 @@
+<div class="introduce-title"><%= nsmodule.name %></div>
+<ul id="introduce-company"  class="introduce-list">
+    <% menus.order("custom_order").each do |item| %>
+        <li><%= link_to item.name, item.url %></li>
+    <% end %>
+</ul>
