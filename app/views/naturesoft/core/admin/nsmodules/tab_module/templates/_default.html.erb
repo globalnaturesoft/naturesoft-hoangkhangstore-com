@@ -1,0 +1,16 @@
+<div class="popular-tabs">
+    <ul class="nav-tab">
+        <% modules.each_with_index do |m, index| %>
+            <li <% if index == 0 %>class="active" <% end %>><a data-toggle="tab" href="#tab-<%= index %>"><%= m.name %></a></li>
+        <% end %>
+    </ul>
+    <div class="tab-container">
+        <% modules.each_with_index do |m, index| %>
+            <div id="tab-<%= index %>" class="tab-panel <% if index == 0 %>active<% end %>">
+                <%= render "naturesoft/"+m.engine_name+"/admin/nsmodules/"+m.module_name+"/show",
+                    nsmodule: m
+                %>
+            </div>
+        <% end %>
+    </div>
+</div>

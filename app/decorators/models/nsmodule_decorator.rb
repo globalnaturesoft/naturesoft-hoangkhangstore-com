@@ -4,6 +4,7 @@ Naturesoft::Nsmodule.class_eval do
     "homeslider" => nil,
     "header-banner" => nil,
     "category-slider" => nil,
+    "popular-tabs" => nil,
     
     # position footer
     "address-box" => nil,
