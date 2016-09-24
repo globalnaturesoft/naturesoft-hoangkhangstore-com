@@ -1,0 +1,23 @@
+
+<div class="col-sm-6  col-lg-3 cate-box">
+    <div class="cate-tit" >
+        <div class="div-1" style="width: 46%;">
+            <div class="cate-name-wrap">
+                <p class="cate-name"><%= parent_menu.name %></p>
+            </div>
+            <%= link_to "<span>xem ngay</span>".html_safe, parent_menu.url, class: "cate-link link-active", "data-ac": "flipInX" %>
+        </div>
+        <div class="div-2" >
+            <a href="#">
+                <img src="/frontend/assets/data/cate-product1.png" alt="Electronics" class="hot-cate-img" />
+            </a>
+        </div>
+    </div>
+    <div class="cate-content">
+        <ul>
+            <% menus.each do |item| %>
+                <li><%= link_to item.name, item.url %></li>
+            <% end %>
+        </ul>
+    </div>
+</div> <!-- /.cate-box -->
