@@ -7,8 +7,12 @@ require "naturesoft/hoangkhangstore_com/version"
 Gem::Specification.new do |s|
   s.name        = "naturesoft_hoangkhangstore_com"
   s.version     = Naturesoft::HoangkhangstoreCom::VERSION
-  s.authors     = ["Hoang Khang Store"]
-  s.email       = ["sonnn@hoangkhang.com.com"]
+  s.authors     = ["Luan Pham",
+                  "Son Nguyen",
+                  "Hung Nguyen"]
+  s.email       = ["luanpm@hoangkhang.com.vn",
+                  "sonnn@hoangkhang.com.vn",
+                  "hungnt@hoangkhang.com.vn"]
   s.homepage    = "http://hoangkhangstore.com"
   s.summary     = "HoangkhangstoreCom features of Global Naturesoft."
   s.description = "HoangkhangstoreCom features of Global Naturesoft."
