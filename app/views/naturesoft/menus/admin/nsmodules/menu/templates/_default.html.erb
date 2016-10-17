@@ -7,7 +7,7 @@
         <div class="vertical-menu-content is-home">
             <ul class="vertical-menu-list">
                 <% menus.order("custom_order").each_with_index do |item, index| %>
-                <li<% if index > 11 %> class="cat-link-orther"<% end %>>
+                <li<% if index > 10 %> class="cat-link-orther"<% end %>>
                     <a<% if item.children.count > 0 %> class="parent"<% end %> href="<%= item.url %>"><img class="icon-menu" alt="Funky roots" src="/frontend/assets/data/7.png"><%= item.name %></a>
                     <% if item.children.count > 0 %>
                     <div class="vertical-dropdown-menu">
