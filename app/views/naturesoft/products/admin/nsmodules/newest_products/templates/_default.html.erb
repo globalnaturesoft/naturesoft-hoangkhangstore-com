@@ -3,7 +3,7 @@
     <% products.each do |item| %>
         <li>
             <div class="left-block">
-                <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name, class: "img-responsive"), naturesoft_products.detail_products_path(product_id: item) %>
+                <%= link_to image_tag(image_src(item.main_image.image_url.big), alt: item.name, class: "img-responsive"), naturesoft_products.detail_products_path(product_id: item, title: url_friendly(item.name)) %>
                 <div class="quick-view">
                         <a title="Add to my wishlist" class="heart" href="#"></a>
                         <a title="Add to compare" class="compare" href="#"></a>
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="right-block">
-                <h5 class="product-name"><%= link_to item.name, naturesoft_products.detail_products_path(product_id: item) %></h5>
+                <h5 class="product-name"><%= link_to item.name, naturesoft_products.detail_products_path(product_id: item, title: url_friendly(item.name)) %></h5>
                 <div class="content_price">
                     <span class="price product-price"><%= format_number(item.new_price) %> VNĐ</span>
                     <% if !item.discount.nil? && !item.old_price.nil? %>
