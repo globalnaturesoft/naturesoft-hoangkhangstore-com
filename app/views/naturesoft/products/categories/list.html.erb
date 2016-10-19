@@ -77,7 +77,7 @@
                                     </div>
                                 </div>
                                 <div class="right-block">
-                                    <h5 class="product-name"><%= link_to item.name, naturesoft_products.detail_products_path(product_id: item) %></h5>
+                                    <h5 class="product-name"><%= link_to item.name, naturesoft_products.detail_products_path(product_id: item, title: url_friendly(item.name)) %></h5>
                                     <div class="product-star">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
